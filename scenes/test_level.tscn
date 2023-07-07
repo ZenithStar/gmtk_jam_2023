@@ -1,8 +1,10 @@
-[gd_scene load_steps=8 format=3 uid="uid://dq34o6bnybbm2"]
+[gd_scene load_steps=10 format=3 uid="uid://dq34o6bnybbm2"]
 
 [ext_resource type="Shader" path="res://scripts/water_effect.gdshader" id="1_56v21"]
 [ext_resource type="TileSet" uid="uid://cmcpnwdeph0tl" path="res://assets/Mossy Tileset/tileset.tres" id="3_uuwx7"]
+[ext_resource type="Script" path="res://scenes/Fish.gd" id="4_6w2pj"]
 [ext_resource type="Shader" path="res://scripts/wind_waker_water.gdshader" id="4_h0shh"]
+[ext_resource type="Texture2D" uid="uid://dm2rmaxd1vfqi" path="res://assets/fish.png" id="5_ge1hd"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_mccv3"]
 shader = ExtResource("1_56v21")
@@ -50,11 +52,15 @@ layer_0/tile_data = PackedInt32Array(-65523, 0, 0, 13, 0, 1, 65549, 0, 1, 131085
 
 [node name="Fish" type="RigidBody2D" parent="."]
 position = Vector2(1069, 210)
+script = ExtResource("4_6w2pj")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Fish"]
 shape = SubResource("CapsuleShape2D_bht2k")
 
 [node name="Camera2D" type="Camera2D" parent="Fish"]
+
+[node name="Sprite2D" type="Sprite2D" parent="Fish"]
+texture = ExtResource("5_ge1hd")
 
 [node name="Water" type="Area2D" parent="."]
 position = Vector2(1025, 2170)
