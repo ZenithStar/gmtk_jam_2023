@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://bb4khnta5dh6g" path="res://icon.svg" id="3_0lgmh"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_y32li"]
-size = Vector2(128, 128)
+size = Vector2(90000, 4000)
 
 [sub_resource type="Gradient" id="Gradient_wqvu0"]
 
@@ -37,3 +37,6 @@ shape = SubResource("RectangleShape2D_y32li")
 [node name="Sprite2D" type="Sprite2D" parent="."]
 material = SubResource("ShaderMaterial_ldnsk")
 texture = ExtResource("3_0lgmh")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]
