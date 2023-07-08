@@ -1,0 +1,41 @@
+[gd_scene load_steps=6 format=3 uid="uid://grgld4o65g87"]
+
+[ext_resource type="Texture2D" uid="uid://dk607jmus4p8n" path="res://assets/Figure_Parts.png" id="1_irly3"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b6oe5"]
+atlas = ExtResource("1_irly3")
+region = Rect2(982, 911, 88, 227)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x7swa"]
+atlas = ExtResource("1_irly3")
+region = Rect2(766, 908, 142, 231)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bmf5l"]
+size = Vector2(181, 80)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nn1q0"]
+size = Vector2(156, 113)
+
+[node name="Tire" type="RigidBody2D"]
+mass = 30.0
+inertia = 30000.0
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+z_index = -1
+position = Vector2(20, 0)
+scale = Vector2(2, 2)
+texture = SubResource("AtlasTexture_b6oe5")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+z_index = 1
+position = Vector2(-141, 0)
+scale = Vector2(2, 2)
+texture = SubResource("AtlasTexture_x7swa")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-90.5, -186)
+shape = SubResource("RectangleShape2D_bmf5l")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
+position = Vector2(-79, 170.5)
+shape = SubResource("RectangleShape2D_nn1q0")
