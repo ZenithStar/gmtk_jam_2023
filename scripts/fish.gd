@@ -8,10 +8,17 @@ var GRAVITY = ProjectSettings.get_setting("physics/2d/default_gravity") * Projec
 @export var MAX_THRUST = 5000
 @export var MAX_VELOCITY = 1000
 
+var first_call = true
 
 func _integrate_forces(state):
+	if first_call:
+		# for some reason the water.overlaps_body(self) is wrong the first time 
+		# this function is called
+		first_call = false
+		return
+
 	var is_in_water = water.overlaps_body(self)
-	
+
 	var buoyancy = -1.01 * GRAVITY * mass if is_in_water else Vector2.ZERO
 
 	var thrust = Vector2.ZERO
@@ -39,7 +46,7 @@ func _integrate_forces(state):
 		# set dampening based on desired terminal velocity
 		dampening_factor = MAX_THRUST / (mass * MAX_VELOCITY)
 	var dampening = -state.linear_velocity * dampening_factor
-	
+
 	if thrust.length() != 0 or !is_in_water:
 		if state.linear_velocity.x < 0:
 			$Sprite2D.flip_h = true

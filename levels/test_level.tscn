@@ -84,4 +84,4 @@ follow_viewport_enabled = true
 
 [node name="Water" parent="Foreground" instance=ExtResource("4_pohog")]
 position = Vector2(0, 24606)
-linear_damp = 0.0
+linear_damp = 1.0
