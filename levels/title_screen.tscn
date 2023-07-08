@@ -1,11 +1,20 @@
-[gd_scene load_steps=7 format=3 uid="uid://dk14ph2i30xli"]
+[gd_scene load_steps=13 format=3 uid="uid://dk14ph2i30xli"]
 
 [ext_resource type="Script" path="res://scripts/title_screen.gd" id="1_k1dr8"]
 [ext_resource type="Script" path="res://scripts/new_game.gd" id="1_lna16"]
+[ext_resource type="FontFile" uid="uid://do032k03kny33" path="res://assets/Fonts/mursgothic-widedark.otf" id="2_88jiy"]
 [ext_resource type="Texture2D" uid="uid://dm2rmaxd1vfqi" path="res://assets/fish.png" id="2_88krr"]
+[ext_resource type="Texture2D" uid="uid://dik5ffdkbkqil" path="res://assets/Dock.v0.1.png" id="2_sqix8"]
 [ext_resource type="Script" path="res://scripts/level_select_button.gd" id="4_1onwu"]
 [ext_resource type="Script" path="res://scripts/continue_game_button.gd" id="4_jxo01"]
 [ext_resource type="AudioStream" uid="uid://55lsdv8vx8j" path="res://assets/Audio/Music/Intro1.wav" id="6_2k67x"]
+[ext_resource type="Texture2D" uid="uid://bt7234vxy7i0s" path="res://assets/Mossy Tileset/Mossy - Decorations&Hazards.png" id="8_kp0ub"]
+[ext_resource type="PackedScene" uid="uid://ca6kdmd2nkoer" path="res://nodes/water.tscn" id="8_mta7v"]
+[ext_resource type="TileSet" uid="uid://cmcpnwdeph0tl" path="res://assets/Mossy Tileset/tileset.tres" id="9_ineng"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ec3hq"]
+atlas = ExtResource("8_kp0ub")
+region = Rect2(177.498, 134.462, 1386.09, 824.058)
 
 [node name="TitleScreen" type="Control"]
 layout_mode = 3
@@ -16,72 +25,107 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_k1dr8")
 
-[node name="NewGameButton" type="Button" parent="."]
+[node name="Dock" type="TextureRect" parent="."]
 layout_mode = 0
-offset_left = 182.0
-offset_top = 175.0
-offset_right = 513.0
-offset_bottom = 325.0
-theme_override_font_sizes/font_size = 42
-text = "New Game"
-script = ExtResource("1_lna16")
+offset_left = 510.0
+offset_top = 22.0
+offset_right = 2235.0
+offset_bottom = 1403.0
+scale = Vector2(0.485654, 0.533091)
+texture = ExtResource("2_sqix8")
 
 [node name="RichTextLabel" type="RichTextLabel" parent="."]
 layout_mode = 0
-offset_left = 458.0
-offset_top = 57.0
-offset_right = 839.0
-offset_bottom = 149.0
-theme_override_font_sizes/normal_font_size = 60
+offset_left = 58.0
+offset_top = 59.0
+offset_right = 519.0
+offset_bottom = 223.0
+theme_override_fonts/normal_font = ExtResource("2_88jiy")
+theme_override_font_sizes/normal_font_size = 90
 text = "Rod Reversal"
 
-[node name="TextureRect" type="TextureRect" parent="."]
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_2k67x")
+volume_db = -20.613
+autoplay = true
+
+[node name="Rock" type="Sprite2D" parent="."]
+position = Vector2(322, 497)
+scale = Vector2(0.529581, 0.565534)
+texture = SubResource("AtlasTexture_ec3hq")
+
+[node name="Fish" type="TextureRect" parent="."]
 layout_mode = 0
-offset_left = 1069.0
-offset_top = 301.0
-offset_right = 1369.0
-offset_bottom = 482.0
+offset_left = 985.0
+offset_top = 389.0
+offset_right = 1285.0
+offset_bottom = 570.0
 scale = Vector2(-1, 1)
 texture = ExtResource("2_88krr")
 expand_mode = 1
 
-[node name="Label" type="Label" parent="."]
-layout_mode = 0
-offset_left = 1011.0
-offset_top = 678.0
-offset_right = 1242.0
-offset_bottom = 704.0
-text = "A 2023 Patient Productions"
+[node name="Ground" type="TileMap" parent="."]
+tile_set = ExtResource("9_ineng")
+format = 2
+layer_0/name = "GroundLayer"
+layer_0/tile_data = PackedInt32Array(65536, 65536, 0, 65537, 65536, 0, 65538, 65536, 0)
 
-[node name="ContinueGameButton" type="Button" parent="."]
-layout_mode = 0
-offset_left = 182.0
-offset_top = 343.0
-offset_right = 513.0
-offset_bottom = 493.0
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Water" parent="CanvasLayer" instance=ExtResource("8_mta7v")]
+
+[node name="ButtonBar" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = -33.0
+offset_bottom = 33.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="NewGameButton" type="Button" parent="ButtonBar"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 42
+text = "New Game"
+script = ExtResource("1_lna16")
+
+[node name="ContinueGameButton" type="Button" parent="ButtonBar"]
+layout_mode = 2
 theme_override_font_sizes/font_size = 42
 text = "Continue"
 script = ExtResource("4_jxo01")
 
-[node name="LevelSelectButton" type="Button" parent="."]
-layout_mode = 0
-offset_left = 180.0
-offset_top = 512.0
-offset_right = 511.0
-offset_bottom = 662.0
+[node name="LevelSelectButton" type="Button" parent="ButtonBar"]
+layout_mode = 2
 theme_override_font_sizes/font_size = 42
 text = "Level Select"
 script = ExtResource("4_1onwu")
 
-[node name="CurrentLevel" type="Label" parent="."]
-layout_mode = 0
-offset_left = 850.0
-offset_top = 500.0
-offset_right = 955.0
-offset_bottom = 526.0
+[node name="BottomBar" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -26.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="CurrentLevel" type="Label" parent="BottomBar"]
+layout_mode = 2
+size_flags_horizontal = 2
 text = "Current Level"
 
 [node name="title" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("6_2k67x")
 volume_db = -35.604
 autoplay = true
+
+[node name="PatientProductions" type="Label" parent="BottomBar"]
+layout_mode = 2
+size_flags_horizontal = 10
+text = "A 2023 Patient Productions"
+horizontal_alignment = 2
