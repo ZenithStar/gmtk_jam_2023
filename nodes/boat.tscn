@@ -1,12 +1,13 @@
 [gd_scene load_steps=3 format=3 uid="uid://b8y45m33fj3im"]
 
 [ext_resource type="Texture2D" uid="uid://doyp65xwahq4d" path="res://assets/Boat.png" id="1_ejau6"]
-[ext_resource type="Script" path="res://scripts/Buoyant.gd" id="1_gquqv"]
+[ext_resource type="Script" path="res://scripts/boat.gd" id="1_tsh1j"]
 
 [node name="Boat" type="RigidBody2D"]
 mass = 100.0
 inertia = 100000.0
-script = ExtResource("1_gquqv")
+lock_rotation = true
+script = ExtResource("1_tsh1j")
 buoyant_factor = 1.2
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
@@ -15,3 +16,9 @@ polygon = PackedVector2Array(-528, -208, -445, -179, -332, -42, -198, 38, 301, 3
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(0, -387)
 texture = ExtResource("1_ejau6")
+
+[node name="LeftForce" type="Node2D" parent="."]
+position = Vector2(-202, 73)
+
+[node name="RightForce" type="Node2D" parent="."]
+position = Vector2(335, 73)
