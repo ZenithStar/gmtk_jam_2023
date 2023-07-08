@@ -1,9 +1,9 @@
 [gd_scene load_steps=5 format=3 uid="uid://dq34o6bnybbm2"]
 
-[ext_resource type="PackedScene" uid="uid://d1bsjvvc22n4b" path="res://scenes/cloudy_skys.tscn" id="1_1nk6b"]
+[ext_resource type="PackedScene" path="res://scenes/cloudy_skys.tscn" id="1_1nk6b"]
 [ext_resource type="TileSet" uid="uid://cmcpnwdeph0tl" path="res://assets/Mossy Tileset/tileset.tres" id="3_uuwx7"]
 [ext_resource type="PackedScene" uid="uid://ca6kdmd2nkoer" path="res://scenes/water.tscn" id="4_pohog"]
-[ext_resource type="PackedScene" uid="uid://d3ugjelus0rqi" path="res://scenes/fish.tscn" id="5_rl2t6"]
+[ext_resource type="PackedScene" uid="uid://bnb7bqebb5t0q" path="res://scenes/fish.tscn" id="5_rl2t6"]
 
 [node name="Node2D" type="Node2D"]
 
