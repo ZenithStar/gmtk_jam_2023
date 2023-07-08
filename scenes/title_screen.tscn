@@ -1,0 +1,47 @@
+[gd_scene load_steps=3 format=3 uid="uid://dk14ph2i30xli"]
+
+[ext_resource type="Script" path="res://StartGame.gd" id="1_5gihx"]
+[ext_resource type="Texture2D" uid="uid://c10rqgidvro5i" path="res://assets/title_image.png" id="2_6b0wd"]
+
+[node name="TitleScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 172.0
+offset_top = 283.0
+offset_right = 519.0
+offset_bottom = 412.0
+theme_override_font_sizes/font_size = 42
+text = "Start Game"
+script = ExtResource("1_5gihx")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+layout_mode = 0
+offset_left = 458.0
+offset_top = 57.0
+offset_right = 839.0
+offset_bottom = 149.0
+theme_override_font_sizes/normal_font_size = 60
+text = "Rod Reversal"
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 752.0
+offset_top = 171.0
+offset_right = 1152.0
+offset_bottom = 571.0
+texture = ExtResource("2_6b0wd")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 1011.0
+offset_top = 678.0
+offset_right = 1242.0
+offset_bottom = 704.0
+text = "A 2023 Patient Productions"
