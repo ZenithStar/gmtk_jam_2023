@@ -11,6 +11,7 @@ radius = 56.0
 height = 184.0
 
 [node name="Fish" type="RigidBody2D"]
+mass = 10.0
 physics_material_override = SubResource("PhysicsMaterial_wfe5g")
 lock_rotation = true
 script = ExtResource("1_y27f2")

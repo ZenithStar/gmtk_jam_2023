@@ -30,7 +30,7 @@ func _integrate_forces(state):
 		thrust.y = .4
 	elif Input.is_action_pressed("up"):
 		thrust.y = -.4
-	thrust = thrust.normalized() * MAX_THRUST
+	thrust = thrust.normalized() * MAX_THRUST * mass
 	if !is_in_water:
 		# can't move as fast out of water, and remove vertical thrust
 		thrust *= Vector2(.1, 0)
@@ -41,10 +41,10 @@ func _integrate_forces(state):
 		dampening_factor = 0
 	elif thrust.length() == 0:
 		# slow down quickly when not actively controlling
-		dampening_factor = 2
+		dampening_factor = 1 * mass
 	else:
 		# set dampening based on desired terminal velocity
-		dampening_factor = MAX_THRUST / (mass * MAX_VELOCITY)
+		dampening_factor = MAX_THRUST * mass / MAX_VELOCITY
 	var dampening = -state.linear_velocity * dampening_factor
 
 	if thrust.length() != 0 or !is_in_water:
