@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://bu44xb5n13kcr"]
+[gd_scene load_steps=8 format=3 uid="uid://bu44xb5n13kcr"]
 
 [ext_resource type="Texture2D" uid="uid://3okhvk64eeyj" path="res://assets/Dock.v0.3.png" id="1_fcmi4"]
 
@@ -22,7 +22,10 @@ region = Rect2(895, 250, 71, 830)
 atlas = ExtResource("1_fcmi4")
 region = Rect2(586, 280, 67, 831)
 
-[node name="Dock" type="Node2D"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pk2g3"]
+size = Vector2(1370, 19)
+
+[node name="Dock" type="StaticBody2D"]
 scale = Vector2(2, 2)
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
@@ -47,3 +50,8 @@ texture = SubResource("AtlasTexture_x3anr")
 z_index = 2
 position = Vector2(-234, 407)
 texture = SubResource("AtlasTexture_swa5s")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0.5, -23)
+shape = SubResource("RectangleShape2D_pk2g3")
+one_way_collision = true
