@@ -1,54 +1,10 @@
-[gd_scene load_steps=11 format=3 uid="uid://dq34o6bnybbm2"]
+[gd_scene load_steps=4 format=3 uid="uid://dq34o6bnybbm2"]
 
-[ext_resource type="Shader" path="res://scripts/water_effect.gdshader" id="1_56v21"]
 [ext_resource type="TileSet" uid="uid://cmcpnwdeph0tl" path="res://assets/Mossy Tileset/tileset.tres" id="3_uuwx7"]
-[ext_resource type="Shader" path="res://scripts/water_distoration.gdshader" id="4_8wj7c"]
-[ext_resource type="Shader" path="res://scripts/wind_waker_water.gdshader" id="4_h0shh"]
-[ext_resource type="PackedScene" uid="uid://2b7lp657ncky" path="res://scenes/fish.tscn" id="5_rl2t6"]
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_mccv3"]
-shader = ExtResource("1_56v21")
-shader_parameter/wave_speed = 3.0
-shader_parameter/wave_freq = 10.0
-shader_parameter/wave_width = 1.0
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_lsoga"]
-shader = ExtResource("4_h0shh")
-shader_parameter/WATER_COL = Color(0.176471, 0.635294, 0.85098, 1)
-shader_parameter/WATER2_COL = Color(0.0588235, 0.529412, 0.776471, 1)
-shader_parameter/FOAM_COL = Color(0.87451, 0.988235, 1, 1)
-shader_parameter/distortion_speed = 2.0
-shader_parameter/tile = Vector2(5, 5)
-shader_parameter/offset = Vector2(0, 0)
-
-[sub_resource type="ImageTexture" id="ImageTexture_i8v4e"]
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_bqytb"]
-shader = ExtResource("4_8wj7c")
-shader_parameter/refraction_stretch = Vector2(1, 1)
-shader_parameter/refraction_strength = 0.02
-shader_parameter/water_tint = Color(0.2, 0.6, 1, 0.101961)
-shader_parameter/speed = 0.1
-shader_parameter/refraction_map = SubResource("ImageTexture_i8v4e")
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_y32li"]
-size = Vector2(16036, 5000)
+[ext_resource type="PackedScene" uid="uid://ca6kdmd2nkoer" path="res://scenes/water.tscn" id="4_pohog"]
+[ext_resource type="PackedScene" path="res://scenes/fish.tscn" id="5_rl2t6"]
 
 [node name="Node2D" type="Node2D"]
-
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
-
-[node name="TextureRect" type="TextureRect" parent="CanvasLayer"]
-material = SubResource("ShaderMaterial_mccv3")
-offset_right = 40.0
-offset_bottom = 40.0
-expand_mode = 2
-
-[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
-material = SubResource("ShaderMaterial_lsoga")
-custom_minimum_size = Vector2(1980, 1080)
-offset_right = 1980.0
-offset_bottom = 1080.0
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = ExtResource("3_uuwx7")
@@ -57,10 +13,6 @@ layer_0/tile_data = PackedInt32Array(-65523, 0, 0, 13, 0, 1, 65549, 0, 1, 131085
 
 [node name="Fish" parent="." instance=ExtResource("5_rl2t6")]
 
-[node name="Water" type="Area2D" parent="."]
-material = SubResource("ShaderMaterial_bqytb")
-position = Vector2(1025, 2170)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Water"]
-position = Vector2(-1552, 0)
-shape = SubResource("RectangleShape2D_y32li")
+[node name="Water" parent="." instance=ExtResource("4_pohog")]
+position = Vector2(-7.62939e-06, 1582)
+scale = Vector2(134.052, 29.34)
