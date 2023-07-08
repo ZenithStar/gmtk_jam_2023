@@ -13,13 +13,14 @@ var GRAVITY = ProjectSettings.get_setting("physics/2d/default_gravity") * Projec
 @export var MAX_THRUST = 5000
 @export var MAX_VELOCITY = 1000
 
+
+@onready var water = get_parent().get_node('Foreground/Water')
+
 func _integrate_forces(state):
 	var buoyancy = Vector2.ZERO
 	var thrust = Vector2.ZERO
 
-	#var water = get_parent().get_node('ParallaxForeground/ParallaxLayer2/Water')
-	#if water.overlaps_body(self):
-	var is_in_water = position.y > -450
+	var is_in_water = water.overlaps_body(self)
 	if is_in_water:
 		buoyancy = -1.01 * GRAVITY * mass
 
