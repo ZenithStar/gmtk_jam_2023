@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://dk14ph2i30xli"]
+[gd_scene load_steps=7 format=3 uid="uid://dk14ph2i30xli"]
 
 [ext_resource type="Script" path="res://scripts/title_screen.gd" id="1_k1dr8"]
 [ext_resource type="Script" path="res://scripts/new_game.gd" id="1_lna16"]
 [ext_resource type="Texture2D" uid="uid://dm2rmaxd1vfqi" path="res://assets/fish.png" id="2_88krr"]
 [ext_resource type="Script" path="res://scripts/level_select_button.gd" id="4_1onwu"]
 [ext_resource type="Script" path="res://scripts/continue_game_button.gd" id="4_jxo01"]
+[ext_resource type="AudioStream" uid="uid://55lsdv8vx8j" path="res://assets/Audio/Music/Intro1.wav" id="6_2k67x"]
 
 [node name="TitleScreen" type="Control"]
 layout_mode = 3
@@ -17,10 +18,10 @@ script = ExtResource("1_k1dr8")
 
 [node name="NewGameButton" type="Button" parent="."]
 layout_mode = 0
-offset_left = 172.0
+offset_left = 182.0
 offset_top = 175.0
-offset_right = 519.0
-offset_bottom = 304.0
+offset_right = 513.0
+offset_bottom = 325.0
 theme_override_font_sizes/font_size = 42
 text = "New Game"
 script = ExtResource("1_lna16")
@@ -55,9 +56,9 @@ text = "A 2023 Patient Productions"
 [node name="ContinueGameButton" type="Button" parent="."]
 layout_mode = 0
 offset_left = 182.0
-offset_top = 332.0
+offset_top = 343.0
 offset_right = 513.0
-offset_bottom = 482.0
+offset_bottom = 493.0
 theme_override_font_sizes/font_size = 42
 text = "Continue"
 script = ExtResource("4_jxo01")
@@ -79,3 +80,8 @@ offset_top = 500.0
 offset_right = 955.0
 offset_bottom = 526.0
 text = "Current Level"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_2k67x")
+volume_db = -20.613
+autoplay = true

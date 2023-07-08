@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://bqm4k1621pbwk"]
+
+[ext_resource type="Texture2D" uid="uid://dk607jmus4p8n" path="res://assets/Figure_Parts.png" id="1_q13ki"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7eill"]
+atlas = ExtResource("1_q13ki")
+region = Rect2(1844, 1102, 225, 184)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ti48m"]
+size = Vector2(223, 179)
+
+[node name="Cooler" type="RigidBody2D"]
+mass = 2.0
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = SubResource("AtlasTexture_7eill")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0.5, -1.5)
+shape = SubResource("RectangleShape2D_ti48m")

@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://c2vuk8uw31rup"]
+
+[ext_resource type="Texture2D" uid="uid://ce3g6mejcvw48" path="res://assets/Trash_Sprites_2.png" id="1_knvao"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mc0nm"]
+atlas = ExtResource("1_knvao")
+region = Rect2(85, 571, 212, 302)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lxfgm"]
+size = Vector2(195, 239.5)
+
+[node name="Oil Drum" type="RigidBody2D"]
+mass = 50.0
+inertia = 50000.0
+max_contacts_reported = 4
+contact_monitor = true
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = SubResource("AtlasTexture_mc0nm")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_lxfgm")

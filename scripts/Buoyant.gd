@@ -11,7 +11,6 @@ func set_submerged(val:bool):
 	submerged = val
 	if submerged:
 		add_constant_central_force(buoyant_force)
-		print(name," buoyant_force added ", buoyant_force)
 	else:
 		constant_force = Vector2(0, 0)
 	
