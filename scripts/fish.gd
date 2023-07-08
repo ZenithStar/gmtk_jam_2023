@@ -9,48 +9,31 @@ var GRAVITY = ProjectSettings.get_setting("physics/2d/default_gravity") * Projec
 @export var THRUST_COMMAND: Vector2 = Vector2(1,.4)
 @export var MAX_VELOCITY = 1000
 
-var first_call = true
 
-func _integrate_forces(state):
-	if first_call:
-		# for some reason the water.overlaps_body(self) is wrong the first time 
-		# this function is called
-		first_call = false
-		return
-
-	var is_in_water = water.overlaps_body(self)
-
-	var buoyancy = -1.01 * GRAVITY * mass if is_in_water else Vector2.ZERO
-
-	var thrust = Vector2.ZERO
+func maybe_play_swim_sounds(is_in_water):
 	var swimSounds = false
 	var someSound = 0;
 	
 	if Input.is_action_pressed("right"):
-		thrust.x = 1
 		if is_in_water:
 			if Input.is_action_just_pressed("right"):
 				swimSounds = true
 				
 	elif Input.is_action_pressed("left"):
-		thrust.x = -1
 		if is_in_water:
 			if Input.is_action_just_pressed("left"):
 				swimSounds = true
 				
 	if Input.is_action_pressed("down"):
-		thrust.y = .4
 		if is_in_water:
 			if Input.is_action_just_pressed("down"):
 				swimSounds = true
 				
 	elif Input.is_action_pressed("up"):
-		thrust.y = -.4
 		if is_in_water:
 			if Input.is_action_just_pressed("up"):
 				swimSounds = true
-	thrust = Vector2( Input.get_axis("left","right"), Input.get_axis("up","down")) * THRUST_COMMAND
-	
+
 	if swimSounds:
 		someSound = (randi() % 5)
 		if someSound == 1:
@@ -67,8 +50,23 @@ func _integrate_forces(state):
 		else:
 			swimSounds = false
 
+
+var first_call = true
+func _integrate_forces(state):
+	if first_call:
+		# for some reason the water.overlaps_body(self) is wrong the first time 
+		# this function is called
+		first_call = false
+		return
+
+	var is_in_water = water.overlaps_body(self)
+	maybe_play_swim_sounds(is_in_water)
+
+	var buoyancy = -1.01 * GRAVITY * mass if is_in_water else Vector2.ZERO
+
+	var thrust = Vector2(Input.get_axis("left", "right"), Input.get_axis("up", "down"))
+	thrust *= THRUST_COMMAND
 	thrust = thrust.normalized() * MAX_THRUST * mass
-	
 	if !is_in_water:
 		# can't move as fast out of water, and remove vertical thrust
 		thrust *= Vector2(.1, 0)

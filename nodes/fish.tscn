@@ -1,7 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://bnb7bqebb5t0q"]
+[gd_scene load_steps=8 format=3 uid="uid://bnb7bqebb5t0q"]
 
 [ext_resource type="Script" path="res://scripts/fish.gd" id="1_y27f2"]
 [ext_resource type="Texture2D" uid="uid://dm2rmaxd1vfqi" path="res://assets/fish.png" id="2_bfeh0"]
+[ext_resource type="AudioStream" uid="uid://mn1yl523a8wr" path="res://assets/Audio/Sounds/water_move1.mp3" id="3_gpiq7"]
+[ext_resource type="AudioStream" uid="uid://ba5yt71ngvorx" path="res://assets/Audio/Sounds/water_move2.wav" id="4_x1lkk"]
+[ext_resource type="AudioStream" uid="uid://cajgswwwqt2jo" path="res://assets/Audio/Sounds/water_move3.wav" id="5_nlg44"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_wfe5g"]
 friction = 0.0
@@ -23,3 +26,18 @@ texture = ExtResource("2_bfeh0")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 rotation = 1.5708
 shape = SubResource("CapsuleShape2D_10ba0")
+
+[node name="move1" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_gpiq7")
+volume_db = -12.18
+pitch_scale = 0.74
+
+[node name="move2" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_x1lkk")
+volume_db = -5.622
+pitch_scale = 0.64
+
+[node name="move3" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_nlg44")
+volume_db = -7.495
+pitch_scale = 0.64
