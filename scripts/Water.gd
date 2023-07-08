@@ -6,11 +6,13 @@ func _ready():
 	print($Sprite2D.scale)
 
 func _on_body_entered(body):
-	pass
-	#if body is Buoyant:
-	#	body.set_submerged(true)
+	if body is Boat:
+		body.set_submerged(true, position.y - ($CollisionShape2D.shape.size.y/2))
+	elif body is Buoyant:
+		body.set_submerged(true)
 
 func _on_body_exited(body):
-	pass
-	#if body is Buoyant:
-	#	body.set_submerged(false)
+	if body is Boat:
+		body.set_submerged(false)
+	elif body is Buoyant:
+		body.set_submerged(false)
