@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://dq34o6bnybbm2"]
+[gd_scene load_steps=18 format=3 uid="uid://dq34o6bnybbm2"]
 
 [ext_resource type="PackedScene" uid="uid://d1bsjvvc22n4b" path="res://nodes/cloudy_skys.tscn" id="1_1nk6b"]
 [ext_resource type="PackedScene" uid="uid://b8v3g4exip626" path="res://nodes/pause_menu.tscn" id="1_2w428"]
@@ -10,12 +10,18 @@
 [ext_resource type="PackedScene" path="res://nodes/tire.tscn" id="6_5axqf"]
 [ext_resource type="PackedScene" uid="uid://b8y45m33fj3im" path="res://nodes/boat.tscn" id="6_hab1a"]
 [ext_resource type="AudioStream" uid="uid://ctgvel5t0k7wh" path="res://assets/Audio/Music/Level1.wav" id="9_agrv3"]
+[ext_resource type="Script" path="res://nodes/string.gd" id="9_eqb0x"]
 [ext_resource type="PackedScene" path="res://nodes/cooler.tscn" id="11_l8i2o"]
 [ext_resource type="PackedScene" path="res://nodes/fisher.tscn" id="12_22878"]
+[ext_resource type="Texture2D" uid="uid://dm2rmaxd1vfqi" path="res://assets/fish.png" id="14_gw3x5"]
+[ext_resource type="Script" path="res://scripts/Buoyant.gd" id="14_ttc3b"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_s1i3p"]
 atlas = ExtResource("3_uf7be")
 region = Rect2(233, 192, 1283, 706)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_40lka"]
+radius = 5.0
 
 [node name="Node2D" type="Node2D"]
 
@@ -67,6 +73,17 @@ position = Vector2(251, -545)
 [node name="Fisher" parent="." instance=ExtResource("12_22878")]
 position = Vector2(202, -699)
 
+[node name="String2D" type="Node2D" parent="Fisher"]
+position = Vector2(-436, -345)
+script = ExtResource("9_eqb0x")
+ropeLength = 100
+constrain = 5
+endPin = false
+endOffset = Vector2(0, 500)
+
+[node name="Line2D" type="Line2D" parent="Fisher/String2D"]
+points = PackedVector2Array(0, 3)
+
 [node name="Boat" parent="." instance=ExtResource("6_hab1a")]
 z_index = 1
 position = Vector2(26, -483)
@@ -104,3 +121,27 @@ linear_damp = 1.0
 stream = ExtResource("9_agrv3")
 volume_db = -23.424
 autoplay = true
+
+[node name="TestFishingLine" type="Node2D" parent="."]
+position = Vector2(-337, -1046)
+script = ExtResource("9_eqb0x")
+ropeLength = 100
+endPin = false
+endOffset = Vector2(0, 1000)
+
+[node name="Line2D" type="Line2D" parent="TestFishingLine"]
+points = PackedVector2Array(0, 3)
+
+[node name="Bobber" type="RigidBody2D" parent="TestFishingLine"]
+position = Vector2(-263, 197)
+script = ExtResource("14_ttc3b")
+buoyant_factor = 10.0
+
+[node name="Fish2" type="Sprite2D" parent="TestFishingLine/Bobber"]
+visible = false
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("14_gw3x5")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TestFishingLine/Bobber"]
+visible = false
+shape = SubResource("CircleShape2D_40lka")
