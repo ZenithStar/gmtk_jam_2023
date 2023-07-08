@@ -81,7 +81,7 @@ offset_right = 955.0
 offset_bottom = 526.0
 text = "Current Level"
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+[node name="title" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("6_2k67x")
-volume_db = -20.613
+volume_db = -35.604
 autoplay = true

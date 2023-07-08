@@ -22,14 +22,50 @@ func _integrate_forces(state):
 	var buoyancy = -1.01 * GRAVITY * mass if is_in_water else Vector2.ZERO
 
 	var thrust = Vector2.ZERO
+	var swimSounds = false
+	var someSound = 0;
+	
 	if Input.is_action_pressed("right"):
 		thrust.x = 1
+		if is_in_water:
+			if Input.is_action_just_pressed("right"):
+				swimSounds = true
+				
 	elif Input.is_action_pressed("left"):
 		thrust.x = -1
+		if is_in_water:
+			if Input.is_action_just_pressed("left"):
+				swimSounds = true
+				
 	if Input.is_action_pressed("down"):
 		thrust.y = .4
+		if is_in_water:
+			if Input.is_action_just_pressed("down"):
+				swimSounds = true
+				
 	elif Input.is_action_pressed("up"):
 		thrust.y = -.4
+		if is_in_water:
+			if Input.is_action_just_pressed("up"):
+				
+				swimSounds = true
+	
+	if swimSounds:
+		someSound = (randi() % 5)
+		if someSound == 1:
+			$move1.play()
+			swimSounds = false
+		elif someSound == 2:
+			$move2.play()
+			swimSounds = false
+		elif someSound == 3:
+			$move3.play()
+			swimSounds = false
+		elif someSound == 4:
+			swimSounds = false
+		else:
+			swimSounds = false
+
 	thrust = thrust.normalized() * MAX_THRUST
 	if !is_in_water:
 		# can't move as fast out of water, and remove vertical thrust

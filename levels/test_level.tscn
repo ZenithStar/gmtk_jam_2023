@@ -8,7 +8,10 @@
 [ext_resource type="PackedScene" uid="uid://bu44xb5n13kcr" path="res://nodes/dock.tscn" id="5_iiol0"]
 [ext_resource type="PackedScene" uid="uid://bnb7bqebb5t0q" path="res://nodes/fish.tscn" id="5_rl2t6"]
 [ext_resource type="PackedScene" uid="uid://grgld4o65g87" path="res://nodes/tire.tscn" id="6_5axqf"]
+[ext_resource type="AudioStream" uid="uid://mn1yl523a8wr" path="res://assets/Audio/Sounds/water_move1.mp3" id="6_b3i8q"]
 [ext_resource type="PackedScene" uid="uid://b8y45m33fj3im" path="res://nodes/boat.tscn" id="6_hab1a"]
+[ext_resource type="AudioStream" uid="uid://ba5yt71ngvorx" path="res://assets/Audio/Sounds/water_move2.wav" id="7_1n2ch"]
+[ext_resource type="AudioStream" uid="uid://cajgswwwqt2jo" path="res://assets/Audio/Sounds/water_move3.wav" id="8_guyxv"]
 [ext_resource type="AudioStream" uid="uid://ctgvel5t0k7wh" path="res://assets/Audio/Music/Level1.wav" id="9_agrv3"]
 [ext_resource type="PackedScene" uid="uid://bqm4k1621pbwk" path="res://nodes/cooler.tscn" id="11_l8i2o"]
 [ext_resource type="PackedScene" uid="uid://y5vk6ms55twk" path="res://nodes/fisher.tscn" id="12_22878"]
@@ -57,6 +60,20 @@ zoom = Vector2(0.25, 0.25)
 
 [node name="Tire" parent="." instance=ExtResource("6_5axqf")]
 position = Vector2(1729, 826)
+[node name="move1" type="AudioStreamPlayer" parent="Fish"]
+stream = ExtResource("6_b3i8q")
+volume_db = -12.18
+pitch_scale = 0.74
+
+[node name="move2" type="AudioStreamPlayer" parent="Fish"]
+stream = ExtResource("7_1n2ch")
+volume_db = -5.622
+pitch_scale = 0.64
+
+[node name="move3" type="AudioStreamPlayer" parent="Fish"]
+stream = ExtResource("8_guyxv")
+volume_db = -7.495
+pitch_scale = 0.64
 
 [node name="Dock" parent="." instance=ExtResource("5_iiol0")]
 position = Vector2(5410, -406)
@@ -100,7 +117,7 @@ follow_viewport_enabled = true
 position = Vector2(0, 24606)
 linear_damp = 1.0
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+[node name="Level1Theme" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("9_agrv3")
 volume_db = -23.424
 autoplay = true
