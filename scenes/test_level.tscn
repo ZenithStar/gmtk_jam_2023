@@ -1,11 +1,12 @@
-[gd_scene load_steps=8 format=3 uid="uid://dq34o6bnybbm2"]
+[gd_scene load_steps=9 format=3 uid="uid://dq34o6bnybbm2"]
 
-[ext_resource type="PackedScene" path="res://scenes/cloudy_skys.tscn" id="1_1nk6b"]
+[ext_resource type="PackedScene" uid="uid://d1bsjvvc22n4b" path="res://scenes/cloudy_skys.tscn" id="1_1nk6b"]
 [ext_resource type="Texture2D" uid="uid://bt7234vxy7i0s" path="res://assets/Mossy Tileset/Mossy - Decorations&Hazards.png" id="3_uf7be"]
 [ext_resource type="TileSet" uid="uid://cmcpnwdeph0tl" path="res://assets/Mossy Tileset/tileset.tres" id="3_uuwx7"]
 [ext_resource type="PackedScene" uid="uid://ca6kdmd2nkoer" path="res://scenes/water.tscn" id="4_pohog"]
-[ext_resource type="PackedScene" path="res://scenes/dock.tscn" id="5_iiol0"]
-[ext_resource type="PackedScene" uid="uid://bnb7bqebb5t0q" path="res://scenes/fish.tscn" id="5_rl2t6"]
+[ext_resource type="PackedScene" uid="uid://bu44xb5n13kcr" path="res://scenes/dock.tscn" id="5_iiol0"]
+[ext_resource type="PackedScene" uid="uid://d3ugjelus0rqi" path="res://scenes/fish.tscn" id="5_rl2t6"]
+[ext_resource type="PackedScene" uid="uid://b8y45m33fj3im" path="res://scenes/boat.tscn" id="6_hab1a"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_s1i3p"]
 atlas = ExtResource("3_uf7be")
@@ -47,6 +48,9 @@ zoom = Vector2(0.25, 0.25)
 [node name="Dock" parent="." instance=ExtResource("5_iiol0")]
 position = Vector2(5410, -406)
 
+[node name="Boat" parent="." instance=ExtResource("6_hab1a")]
+position = Vector2(21, -831)
+
 [node name="Midground" type="TileMap" parent="."]
 z_index = 2
 tile_set = ExtResource("3_uuwx7")
@@ -73,4 +77,4 @@ layer_0/tile_data = PackedInt32Array(-20, 65538, 0, -19, 65538, 0, -18, 65538, 0
 z_index = 1000
 position = Vector2(0, 1474)
 scale = Vector2(134.052, 29.34)
-linear_damp = 0.0
+linear_damp = 1.0

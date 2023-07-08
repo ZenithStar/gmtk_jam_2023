@@ -8,6 +8,7 @@ shader_type canvas_item;
 
 uniform sampler2D noise_tex;
 uniform sampler2D gradient_tex;
+uniform vec2 scroll = vec2(0.0,1.0);
 
 uniform vec4 brighter_color : source_color = vec4(1.0, 0.8, 0.0, 1.0);
 uniform vec4 middle_color : source_color  = vec4(1.0, 0.56, 0.0, 1.0);
@@ -18,7 +19,7 @@ uniform float spread : hint_range(0.0, 1.0) = 0.5;
 void fragment()
 {
 	
-	float noise_value = texture(noise_tex, UV + vec2(0.0, TIME)).x;
+	float noise_value = texture(noise_tex, UV + TIME * scroll).x;
 	// The .yx swizzle is when using the built in horizontal gradient texture. If you have a vertical gradient texture remove .yx
 	float gradient_value = texture(gradient_tex, UV.yx).x;
 	

@@ -1,0 +1,34 @@
+[gd_scene load_steps=9 format=3 uid="uid://bd5cr86ockmd2"]
+
+[ext_resource type="Shader" path="res://shaders/2d_fire.gdshader" id="1_3k6ag"]
+[ext_resource type="Texture2D" uid="uid://bb4khnta5dh6g" path="res://icon.svg" id="2_xf34e"]
+
+[sub_resource type="Gradient" id="Gradient_pvxdf"]
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_y76bj"]
+gradient = SubResource("Gradient_pvxdf")
+fill_from = Vector2(0, 1)
+
+[sub_resource type="Gradient" id="Gradient_qpewx"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_broik"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_c7f08"]
+seamless = true
+seamless_blend_skirt = 0.334
+color_ramp = SubResource("Gradient_qpewx")
+noise = SubResource("FastNoiseLite_broik")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_duu0e"]
+shader = ExtResource("1_3k6ag")
+shader_parameter/scroll = Vector2(0.5, 0.5)
+shader_parameter/brighter_color = Color(1, 0.8, 0, 1)
+shader_parameter/middle_color = Color(1, 0.56, 0, 1)
+shader_parameter/darker_color = Color(0.64, 0.2, 0.05, 1)
+shader_parameter/spread = 0.5
+shader_parameter/noise_tex = SubResource("NoiseTexture2D_c7f08")
+shader_parameter/gradient_tex = SubResource("GradientTexture2D_y76bj")
+
+[node name="Fire" type="Sprite2D"]
+material = SubResource("ShaderMaterial_duu0e")
+texture = ExtResource("2_xf34e")
