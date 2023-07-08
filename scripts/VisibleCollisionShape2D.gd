@@ -11,6 +11,8 @@ func _ready():
 func _draw():
 	if (shape is CircleShape2D):
 		draw_circle(Vector2(0, 0), shape.radius, color)
+	elif (shape is RectangleShape2D):
+		draw_rect(Rect2(-shape.size.x / 2, -shape.size.y / 2, shape.size.x, shape.size.y), color)
 	elif (shape is CapsuleShape2D):
 		var actual_height = shape.height - shape.radius
 		if actual_height < 0.0:

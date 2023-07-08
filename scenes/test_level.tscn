@@ -49,7 +49,7 @@ zoom = Vector2(0.25, 0.25)
 position = Vector2(5410, -406)
 
 [node name="Boat" parent="." instance=ExtResource("6_hab1a")]
-position = Vector2(21, -831)
+position = Vector2(26, -855)
 
 [node name="Midground" type="TileMap" parent="."]
 z_index = 2
@@ -75,6 +75,6 @@ layer_0/tile_data = PackedInt32Array(-20, 65538, 0, -19, 65538, 0, -18, 65538, 0
 
 [node name="Water" parent="ParallaxForeground/ParallaxLayer2" instance=ExtResource("4_pohog")]
 z_index = 1000
-position = Vector2(0, 1474)
-scale = Vector2(134.052, 29.34)
+position = Vector2(0, 1629)
 linear_damp = 0.0
+collision_size = Vector2(90000, 4000)
