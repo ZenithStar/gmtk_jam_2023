@@ -1,8 +1,7 @@
-[gd_scene load_steps=15 format=3 uid="uid://dq34o6bnybbm2"]
+[gd_scene load_steps=13 format=3 uid="uid://dq34o6bnybbm2"]
 
 [ext_resource type="Shader" path="res://scripts/water_effect.gdshader" id="1_56v21"]
 [ext_resource type="TileSet" uid="uid://cmcpnwdeph0tl" path="res://assets/Mossy Tileset/tileset.tres" id="3_uuwx7"]
-[ext_resource type="Script" path="res://scripts/VisibleCollisionShape2D.gd" id="4_01red"]
 [ext_resource type="Script" path="res://scenes/Fish.gd" id="4_6w2pj"]
 [ext_resource type="Shader" path="res://scripts/water_distoration.gdshader" id="4_8wj7c"]
 [ext_resource type="Shader" path="res://scripts/wind_waker_water.gdshader" id="4_h0shh"]
@@ -24,11 +23,8 @@ shader_parameter/tile = Vector2(5, 5)
 shader_parameter/offset = Vector2(0, 0)
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_bht2k"]
-radius = 100.0
-height = 400.0
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_ow4k1"]
-radius = 27.0185
+radius = 41.0
+height = 114.0
 
 [sub_resource type="ImageTexture" id="ImageTexture_i8v4e"]
 
@@ -70,15 +66,9 @@ position = Vector2(1069, 210)
 script = ExtResource("4_6w2pj")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Fish"]
+position = Vector2(30, -3)
+rotation = 1.57079
 shape = SubResource("CapsuleShape2D_bht2k")
-script = ExtResource("4_01red")
-color = Color(0, 0.388235, 0, 1)
-
-[node name="VisibleCollisionShape2D" type="CollisionShape2D" parent="Fish/CollisionShape2D"]
-position = Vector2(-40, -158)
-shape = SubResource("CircleShape2D_ow4k1")
-script = ExtResource("4_01red")
-color = Color(1, 0, 0, 1)
 
 [node name="Camera2D" type="Camera2D" parent="Fish"]
 
