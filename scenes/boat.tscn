@@ -1,12 +1,11 @@
-[gd_scene load_steps=3 format=3 uid="uid://b8y45m33fj3im"]
+[gd_scene load_steps=2 format=3 uid="uid://b8y45m33fj3im"]
 
 [ext_resource type="Texture2D" uid="uid://doyp65xwahq4d" path="res://assets/Boat.png" id="1_ejau6"]
-[ext_resource type="Script" path="res://scripts/Buoyant.gd" id="1_gquqv"]
 
 [node name="Boat" type="RigidBody2D"]
-mass = 10.0
-inertia = 10000.0
-script = ExtResource("1_gquqv")
+mass = 100.0
+inertia = 100000.0
+lock_rotation = true
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
 polygon = PackedVector2Array(-528, -208, -378, -161, -263, -142, 461, -143, 461, -115, 449, -112, 450, -35, 432, 14, 402, 51, 348, 80, 300, 84, -206, 84, -279, 57, -369, 3, -414, -31, -477, -110, -498, -163, -539, -179)
