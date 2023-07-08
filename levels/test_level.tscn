@@ -1,7 +1,7 @@
 [gd_scene load_steps=10 format=3 uid="uid://dq34o6bnybbm2"]
 
 [ext_resource type="PackedScene" uid="uid://d1bsjvvc22n4b" path="res://nodes/cloudy_skys.tscn" id="1_1nk6b"]
-[ext_resource type="PackedScene" uid="uid://b8v3g4exip626" path="res://scenes/pause_menu.tscn" id="1_2w428"]
+[ext_resource type="PackedScene" uid="uid://b8v3g4exip626" path="res://nodes/pause_menu.tscn" id="1_2w428"]
 [ext_resource type="Texture2D" uid="uid://bt7234vxy7i0s" path="res://assets/Mossy Tileset/Mossy - Decorations&Hazards.png" id="3_uf7be"]
 [ext_resource type="TileSet" uid="uid://cmcpnwdeph0tl" path="res://assets/Mossy Tileset/tileset.tres" id="3_uuwx7"]
 [ext_resource type="PackedScene" uid="uid://ca6kdmd2nkoer" path="res://nodes/water.tscn" id="4_pohog"]

@@ -1,8 +1,8 @@
 extends Node
 
 var level_lookup = [
-	"res://scenes/test_level.tscn",
-	"res://scenes/angela_level.tscn",
+	"res://levels/test_level.tscn",
+	"res://levels/angela_level.tscn",
 	"test",
 	"test",
 	"test",

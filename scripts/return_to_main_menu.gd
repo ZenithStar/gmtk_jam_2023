@@ -13,4 +13,4 @@ func _process(delta):
 func _pressed():
 	print("got to pressed return to main menu button")
 	get_tree().paused = false
-	SceneTransition.change_scene("res://scenes/title_screen.tscn")
+	SceneTransition.change_scene("res://levels/title_screen.tscn")
