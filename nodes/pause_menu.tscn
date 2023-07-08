@@ -1,6 +1,5 @@
-[gd_scene load_steps=3 format=3 uid="uid://b8v3g4exip626"]
+[gd_scene load_steps=2 format=3 uid="uid://b8v3g4exip626"]
 
-[ext_resource type="Script" path="res://scripts/return_to_main_menu.gd" id="1_375dh"]
 [ext_resource type="Script" path="res://scripts/pause_menu.gd" id="1_fm6wt"]
 
 [node name="PauseMenu" type="Control"]
@@ -64,4 +63,11 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_font_sizes/font_size = 20
 text = "Return to Main Menu"
-script = ExtResource("1_375dh")
+
+[node name="ResumeGame" type="Button" parent="PauseOverlay"]
+layout_mode = 0
+offset_left = 533.0
+offset_top = 370.0
+offset_right = 747.0
+offset_bottom = 470.0
+text = "Resume Game"
