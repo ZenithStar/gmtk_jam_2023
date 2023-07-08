@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://bb4khnta5dh6g" path="res://icon.svg" id="3_0lgmh"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_y32li"]
-size = Vector2(90000, 4000)
+size = Vector2(50000, 50000)
 
 [sub_resource type="Gradient" id="Gradient_wqvu0"]
 
@@ -26,13 +26,13 @@ shader_parameter/speed = 0.05
 shader_parameter/refraction_map = SubResource("NoiseTexture2D_6teht")
 
 [node name="Water" type="Area2D"]
-position = Vector2(-125, 2165)
 linear_damp_space_override = 1
 linear_damp = 20.0
 script = ExtResource("1_0m1xg")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_y32li")
+debug_color = Color(0.819608, 0.403922, 0, 0.419608)
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 material = SubResource("ShaderMaterial_ldnsk")

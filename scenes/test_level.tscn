@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://bt7234vxy7i0s" path="res://assets/Mossy Tileset/Mossy - Decorations&Hazards.png" id="3_uf7be"]
 [ext_resource type="TileSet" uid="uid://cmcpnwdeph0tl" path="res://assets/Mossy Tileset/tileset.tres" id="3_uuwx7"]
 [ext_resource type="PackedScene" uid="uid://ca6kdmd2nkoer" path="res://scenes/water.tscn" id="4_pohog"]
-[ext_resource type="PackedScene" path="res://scenes/dock.tscn" id="5_iiol0"]
+[ext_resource type="PackedScene" uid="uid://bu44xb5n13kcr" path="res://scenes/dock.tscn" id="5_iiol0"]
 [ext_resource type="PackedScene" uid="uid://bnb7bqebb5t0q" path="res://scenes/fish.tscn" id="5_rl2t6"]
 [ext_resource type="PackedScene" uid="uid://b8y45m33fj3im" path="res://scenes/boat.tscn" id="6_hab1a"]
 
@@ -75,6 +75,5 @@ layer_0/tile_data = PackedInt32Array(-20, 65538, 0, -19, 65538, 0, -18, 65538, 0
 
 [node name="Water" parent="ParallaxForeground/ParallaxLayer2" instance=ExtResource("4_pohog")]
 z_index = 1000
-position = Vector2(0, 1629)
+position = Vector2(0, 24606)
 linear_damp = 0.0
-collision_size = Vector2(90000, 4000)
