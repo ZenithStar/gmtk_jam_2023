@@ -12,8 +12,11 @@ func _process(_delta):
 var GRAVITY = ProjectSettings.get_setting("physics/2d/default_gravity") * ProjectSettings.get_setting("physics/2d/default_gravity_vector")
 var MAX_THRUST = 300
 
+
 func _integrate_forces(state):
 	var buoyancy = Vector2.ZERO
+	#var water = get_parent().get_node('ParallaxForeground/ParallaxLayer2/Water')
+	#if water.overlaps_body(self):
 	if position.y > -490:
 		buoyancy = -1.001 * GRAVITY * mass
 
