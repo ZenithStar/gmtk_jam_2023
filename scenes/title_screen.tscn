@@ -1,7 +1,10 @@
-[gd_scene load_steps=3 format=3 uid="uid://dk14ph2i30xli"]
+[gd_scene load_steps=6 format=3 uid="uid://dk14ph2i30xli"]
 
-[ext_resource type="Script" path="res://StartGame.gd" id="1_5gihx"]
-[ext_resource type="Texture2D" uid="uid://c10rqgidvro5i" path="res://assets/title_image.png" id="2_6b0wd"]
+[ext_resource type="Script" path="res://scripts/title_screen.gd" id="1_k1dr8"]
+[ext_resource type="Script" path="res://scripts/new_game.gd" id="1_lna16"]
+[ext_resource type="Texture2D" uid="uid://dm2rmaxd1vfqi" path="res://assets/fish.png" id="2_88krr"]
+[ext_resource type="Script" path="res://scripts/LevelSelectButton.gd" id="4_1onwu"]
+[ext_resource type="Script" path="res://scripts/ContinueGameButton.gd" id="4_jxo01"]
 
 [node name="TitleScreen" type="Control"]
 layout_mode = 3
@@ -10,16 +13,17 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_k1dr8")
 
-[node name="Button" type="Button" parent="."]
+[node name="NewGameButton" type="Button" parent="."]
 layout_mode = 0
 offset_left = 172.0
-offset_top = 283.0
+offset_top = 175.0
 offset_right = 519.0
-offset_bottom = 412.0
+offset_bottom = 304.0
 theme_override_font_sizes/font_size = 42
-text = "Start Game"
-script = ExtResource("1_5gihx")
+text = "New Game"
+script = ExtResource("1_lna16")
 
 [node name="RichTextLabel" type="RichTextLabel" parent="."]
 layout_mode = 0
@@ -32,11 +36,13 @@ text = "Rod Reversal"
 
 [node name="TextureRect" type="TextureRect" parent="."]
 layout_mode = 0
-offset_left = 752.0
-offset_top = 171.0
-offset_right = 1152.0
-offset_bottom = 571.0
-texture = ExtResource("2_6b0wd")
+offset_left = 1069.0
+offset_top = 301.0
+offset_right = 1369.0
+offset_bottom = 482.0
+scale = Vector2(-1, 1)
+texture = ExtResource("2_88krr")
+expand_mode = 1
 
 [node name="Label" type="Label" parent="."]
 layout_mode = 0
@@ -45,3 +51,31 @@ offset_top = 678.0
 offset_right = 1242.0
 offset_bottom = 704.0
 text = "A 2023 Patient Productions"
+
+[node name="ContinueGameButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 182.0
+offset_top = 332.0
+offset_right = 513.0
+offset_bottom = 482.0
+theme_override_font_sizes/font_size = 42
+text = "Continue"
+script = ExtResource("4_jxo01")
+
+[node name="LevelSelectButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 180.0
+offset_top = 512.0
+offset_right = 511.0
+offset_bottom = 662.0
+theme_override_font_sizes/font_size = 42
+text = "Level Select"
+script = ExtResource("4_1onwu")
+
+[node name="CurrentLevel" type="Label" parent="."]
+layout_mode = 0
+offset_left = 850.0
+offset_top = 500.0
+offset_right = 955.0
+offset_bottom = 526.0
+text = "Current Level"
