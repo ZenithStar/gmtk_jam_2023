@@ -74,3 +74,4 @@ layer_0/tile_data = PackedInt32Array(-20, 65538, 0, -19, 65538, 0, -18, 65538, 0
 z_index = 1000
 position = Vector2(0, 1474)
 scale = Vector2(134.052, 29.34)
+linear_damp = 0.0
