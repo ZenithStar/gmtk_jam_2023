@@ -16,3 +16,9 @@ polygon = PackedVector2Array(-528, -208, -445, -179, -332, -42, -198, 38, 301, 3
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(0, -387)
 texture = ExtResource("1_ejau6")
+
+[node name="LeftForce" type="Node2D" parent="."]
+position = Vector2(-202, 73)
+
+[node name="RightForce" type="Node2D" parent="."]
+position = Vector2(335, 73)
