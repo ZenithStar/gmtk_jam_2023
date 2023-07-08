@@ -15,10 +15,10 @@ physics_material_override = SubResource("PhysicsMaterial_wfe5g")
 lock_rotation = true
 script = ExtResource("1_y27f2")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-rotation = 1.5708
-shape = SubResource("CapsuleShape2D_10ba0")
-
 [node name="Sprite2D" type="Sprite2D" parent="."]
 scale = Vector2(0.08, 0.08)
 texture = ExtResource("2_bfeh0")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_10ba0")
