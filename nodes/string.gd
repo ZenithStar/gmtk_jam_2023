@@ -54,7 +54,6 @@ func _process(delta)->void: #delta is typically 0.016...
 	update_points(delta)
 	update_constrain()
 	if (bobber != null):
-		print("bobber set", bobber.transform.origin)
 		set_last(bobber.transform.origin)
 	
 	#update_constrain()	#Repeat to get tighter rope
