@@ -61,7 +61,14 @@ position = Vector2(1729, 826)
 [node name="Dock" parent="." instance=ExtResource("5_iiol0")]
 position = Vector2(5410, -406)
 
+[node name="Cooler" parent="." instance=ExtResource("11_l8i2o")]
+position = Vector2(251, -545)
+
+[node name="Fisher" parent="." instance=ExtResource("12_22878")]
+position = Vector2(202, -699)
+
 [node name="Boat" parent="." instance=ExtResource("6_hab1a")]
+z_index = 1
 position = Vector2(26, -483)
 angular_damp = 50.0
 
@@ -97,9 +104,3 @@ linear_damp = 0.0
 stream = ExtResource("9_agrv3")
 volume_db = -23.424
 autoplay = true
-
-[node name="Cooler" parent="." instance=ExtResource("11_l8i2o")]
-position = Vector2(184, -714)
-
-[node name="RigidBody2D" parent="." instance=ExtResource("12_22878")]
-position = Vector2(130, -866)

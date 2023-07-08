@@ -6,7 +6,7 @@
 atlas = ExtResource("1_kqfro")
 region = Rect2(77, 74, 595, 573)
 
-[node name="RigidBody2D" type="RigidBody2D"]
+[node name="Fisher" type="RigidBody2D"]
 mass = 80.0
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
