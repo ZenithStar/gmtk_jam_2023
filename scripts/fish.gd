@@ -6,6 +6,7 @@ extends RigidBody2D
 
 var GRAVITY = ProjectSettings.get_setting("physics/2d/default_gravity") * ProjectSettings.get_setting("physics/2d/default_gravity_vector")
 @export var MAX_THRUST = 5000
+@export var THRUST_COMMAND: Vector2 = Vector2(1,.4)
 @export var MAX_VELOCITY = 1000
 
 var first_call = true
@@ -48,7 +49,8 @@ func _integrate_forces(state):
 		if is_in_water:
 			if Input.is_action_just_pressed("up"):
 				swimSounds = true
-
+	thrust = Vector2( Input.get_axis("left","right"), Input.get_axis("up","down")) * THRUST_COMMAND
+	
 	if swimSounds:
 		someSound = (randi() % 5)
 		if someSound == 1:

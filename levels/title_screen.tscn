@@ -73,6 +73,7 @@ layer_0/tile_data = PackedInt32Array(65536, 65536, 0, 65537, 65536, 0, 65538, 65
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="Water" parent="CanvasLayer" instance=ExtResource("8_mta7v")]
+position = Vector2(0, 25295)
 
 [node name="ButtonBar" type="HBoxContainer" parent="."]
 layout_mode = 1
@@ -119,13 +120,13 @@ layout_mode = 2
 size_flags_horizontal = 2
 text = "Current Level"
 
-[node name="title" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("6_2k67x")
-volume_db = -35.604
-autoplay = true
-
 [node name="PatientProductions" type="Label" parent="BottomBar"]
 layout_mode = 2
 size_flags_horizontal = 10
 text = "A 2023 Patient Productions"
 horizontal_alignment = 2
+
+[node name="title" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_2k67x")
+volume_db = -35.604
+autoplay = true
