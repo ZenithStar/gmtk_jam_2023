@@ -6,9 +6,11 @@ func _ready():
 	print($Sprite2D.scale)
 
 func _on_body_entered(body):
-	if body is Buoyant:
-		body.set_submerged(true)
+	pass
+	#if body is Buoyant:
+	#	body.set_submerged(true)
 
 func _on_body_exited(body):
-	if body is Buoyant:
-		body.set_submerged(false)
+	pass
+	#if body is Buoyant:
+	#	body.set_submerged(false)
