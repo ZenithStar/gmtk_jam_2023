@@ -1,0 +1,49 @@
+[gd_scene load_steps=7 format=3 uid="uid://bu44xb5n13kcr"]
+
+[ext_resource type="Texture2D" uid="uid://3okhvk64eeyj" path="res://assets/Dock.v0.3.png" id="1_fcmi4"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vnjik"]
+atlas = ExtResource("1_fcmi4")
+region = Rect2(127, 254, 52, 1040)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jkxbk"]
+atlas = ExtResource("1_fcmi4")
+region = Rect2(1227, 249, 53, 1034)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2xjjx"]
+atlas = ExtResource("1_fcmi4")
+region = Rect2(0, 20, 1374, 68)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x3anr"]
+atlas = ExtResource("1_fcmi4")
+region = Rect2(895, 250, 71, 830)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_swa5s"]
+atlas = ExtResource("1_fcmi4")
+region = Rect2(586, 280, 67, 831)
+
+[node name="Dock" type="Node2D"]
+scale = Vector2(2, 2)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+z_index = -5
+position = Vector2(-565, 513)
+texture = SubResource("AtlasTexture_vnjik")
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+z_index = -5
+position = Vector2(-170, 498)
+texture = SubResource("AtlasTexture_jkxbk")
+
+[node name="pathetic tiny dock" type="Sprite2D" parent="."]
+texture = SubResource("AtlasTexture_2xjjx")
+
+[node name="Sprite2D3" type="Sprite2D" parent="."]
+z_index = 2
+position = Vector2(-628, 404)
+texture = SubResource("AtlasTexture_x3anr")
+
+[node name="Sprite2D4" type="Sprite2D" parent="."]
+z_index = 2
+position = Vector2(-234, 407)
+texture = SubResource("AtlasTexture_swa5s")
