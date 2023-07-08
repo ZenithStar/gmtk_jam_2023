@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://scripts/title_screen.gd" id="1_k1dr8"]
 [ext_resource type="Script" path="res://scripts/new_game.gd" id="1_lna16"]
 [ext_resource type="Texture2D" uid="uid://dm2rmaxd1vfqi" path="res://assets/fish.png" id="2_88krr"]
-[ext_resource type="Script" path="res://scripts/LevelSelectButton.gd" id="4_1onwu"]
+[ext_resource type="Script" path="res://scripts/level_select_button.gd" id="4_1onwu"]
 [ext_resource type="Script" path="res://scripts/ContinueGameButton.gd" id="4_jxo01"]
 
 [node name="TitleScreen" type="Control"]
