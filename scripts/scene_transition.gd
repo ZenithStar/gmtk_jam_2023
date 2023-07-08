@@ -1,3 +1,4 @@
+# taken from https://www.youtube.com/watch?v=yZQStB6nHuI
 extends CanvasLayer
 
 func change_scene(target: String) -> void:
