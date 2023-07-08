@@ -1,7 +1,7 @@
 [gd_scene load_steps=9 format=3 uid="uid://ca6kdmd2nkoer"]
 
 [ext_resource type="Script" path="res://scripts/Water.gd" id="1_0m1xg"]
-[ext_resource type="Shader" path="res://scripts/water_distoration.gdshader" id="2_jflbk"]
+[ext_resource type="Shader" path="res://shaders/water_distoration.gdshader" id="2_jflbk"]
 [ext_resource type="Texture2D" uid="uid://bb4khnta5dh6g" path="res://icon.svg" id="3_0lgmh"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_y32li"]
