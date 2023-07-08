@@ -3,7 +3,7 @@ extends RigidBody2D
 var speed = 400
 var facing_left = false
 
-func _process(delta):
+func _phyiscs_process(delta):
 	var velocity = Vector2.ZERO # The player's movement vector.
 	if Input.is_action_pressed("move_right"):
 		velocity.x += 1
