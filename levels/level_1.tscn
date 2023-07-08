@@ -51,7 +51,6 @@ layer_0/tile_data = PackedInt32Array(-65523, 0, 0, 13, 0, 1, 65549, 0, 1, 131085
 
 [node name="Foreground" type="CanvasLayer" parent="."]
 layer = 2
-visible = false
 follow_viewport_enabled = true
 
 [node name="Water" parent="Foreground" instance=ExtResource("8_8jwvt")]
