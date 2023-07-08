@@ -17,10 +17,10 @@ script = ExtResource("1_k1dr8")
 
 [node name="NewGameButton" type="Button" parent="."]
 layout_mode = 0
-offset_left = 172.0
+offset_left = 182.0
 offset_top = 175.0
-offset_right = 519.0
-offset_bottom = 304.0
+offset_right = 513.0
+offset_bottom = 325.0
 theme_override_font_sizes/font_size = 42
 text = "New Game"
 script = ExtResource("1_lna16")
@@ -55,9 +55,9 @@ text = "A 2023 Patient Productions"
 [node name="ContinueGameButton" type="Button" parent="."]
 layout_mode = 0
 offset_left = 182.0
-offset_top = 332.0
+offset_top = 343.0
 offset_right = 513.0
-offset_bottom = 482.0
+offset_bottom = 493.0
 theme_override_font_sizes/font_size = 42
 text = "Continue"
 script = ExtResource("4_jxo01")
