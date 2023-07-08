@@ -17,10 +17,7 @@ var posPrev: PackedVector2Array
 var pointCount: int
 
 func _ready()->void:
-	print("_ready()")
 	pointCount = get_pointCount(ropeLength)
-	print("Rigid:", bobber)
-	print("line2D:", line2D)
 	resize_arrays()
 	init_position()
 
