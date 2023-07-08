@@ -9,7 +9,8 @@ inertia = 10000.0
 script = ExtResource("1_gquqv")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
-polygon = PackedVector2Array(-528, 175, -392, 222, -253, 245, 460, 244, 463, 273, 453, 274, 454, 347, 442, 387, 409, 434, 365, 462, 323, 473, -191, 472, -236, 464, -295, 439, -357, 403, -417, 357, -473, 287, -504, 223, -543, 206)
+polygon = PackedVector2Array(-528, -208, -378, -161, -263, -142, 461, -143, 461, -115, 449, -112, 450, -35, 432, 14, 402, 51, 348, 80, 300, 84, -206, 84, -279, 57, -369, 3, -414, -31, -477, -110, -498, -163, -539, -179)
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -387)
 texture = ExtResource("1_ejau6")
