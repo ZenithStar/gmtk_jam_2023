@@ -4,14 +4,14 @@
 [ext_resource type="Texture2D" uid="uid://dm2rmaxd1vfqi" path="res://assets/fish.png" id="2_bfeh0"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_10ba0"]
-radius = 38.0
-height = 178.0
+radius = 56.0
+height = 184.0
 
 [node name="Fish" type="CharacterBody2D"]
 script = ExtResource("1_y27f2")
-metadata/_edit_group_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.08, 0.08)
 texture = ExtResource("2_bfeh0")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
