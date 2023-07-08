@@ -1,11 +1,10 @@
-<<<<<<< HEAD
-[gd_scene load_steps=14 format=3 uid="uid://dq34o6bnybbm2"]
+[gd_scene load_steps=15 format=3 uid="uid://dq34o6bnybbm2"]
 
 [ext_resource type="Shader" path="res://scripts/water_effect.gdshader" id="1_56v21"]
 [ext_resource type="TileSet" uid="uid://cmcpnwdeph0tl" path="res://assets/Mossy Tileset/tileset.tres" id="3_uuwx7"]
 [ext_resource type="Script" path="res://scripts/VisibleCollisionShape2D.gd" id="4_01red"]
-[ext_resource type="Shader" path="res://scripts/water_distoration.gdshader" id="4_8wj7c"]
 [ext_resource type="Script" path="res://scenes/Fish.gd" id="4_6w2pj"]
+[ext_resource type="Shader" path="res://scripts/water_distoration.gdshader" id="4_8wj7c"]
 [ext_resource type="Shader" path="res://scripts/wind_waker_water.gdshader" id="4_h0shh"]
 [ext_resource type="Texture2D" uid="uid://dm2rmaxd1vfqi" path="res://assets/fish.png" id="5_ge1hd"]
 
