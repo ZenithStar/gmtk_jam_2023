@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://cdbgoe2g28kkr"]
 
-[ext_resource type="Shader" path="res://scripts/clouds_in_motion.gdshader" id="1_1ehm8"]
+[ext_resource type="Shader" path="res://shaders/clouds_in_motion.gdshader" id="1_1ehm8"]
 [ext_resource type="Texture2D" uid="uid://bb4khnta5dh6g" path="res://icon.svg" id="2_m77da"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_65g3r"]

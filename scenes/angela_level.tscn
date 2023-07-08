@@ -1,7 +1,7 @@
 [gd_scene load_steps=8 format=3 uid="uid://xfua52i5qxih"]
 
-[ext_resource type="Shader" path="res://scripts/water_effect.gdshader" id="1_ge37t"]
-[ext_resource type="Shader" path="res://scripts/wind_waker_water.gdshader" id="2_cf68m"]
+[ext_resource type="Shader" path="res://shaders/water_effect.gdshader" id="1_ge37t"]
+[ext_resource type="Shader" path="res://shaders/wind_waker_water.gdshader" id="2_cf68m"]
 [ext_resource type="TileSet" uid="uid://cmcpnwdeph0tl" path="res://assets/Mossy Tileset/tileset.tres" id="3_1ah1m"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_mccv3"]
