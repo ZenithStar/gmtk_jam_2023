@@ -26,6 +26,7 @@ friction = 0.0
 [sub_resource type="CircleShape2D" id="CircleShape2D_40lka"]
 radius = 17.504
 
+
 [node name="Node2D" type="Node2D"]
 
 [node name="PauseOverlayAttachPoint" type="CanvasLayer" parent="."]
