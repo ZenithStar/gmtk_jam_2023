@@ -1,9 +1,7 @@
 extends RigidBody2D
 class_name Fish
 
-
 @onready var water = get_parent().get_node('Foreground/Water')
-
 
 var GRAVITY = ProjectSettings.get_setting("physics/2d/default_gravity") * ProjectSettings.get_setting("physics/2d/default_gravity_vector")
 @export var MAX_THRUST = 5000
