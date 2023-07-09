@@ -6,7 +6,8 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_baqpq"]
 size = Vector2(1, 1)
 
-[sub_resource type="SegmentShape2D" id="SegmentShape2D_j457r"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_y542x"]
+size = Vector2(24, 24)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yta8n"]
 size = Vector2(128, 128)
@@ -20,19 +21,22 @@ position = Vector2(614, 90)
 position = Vector2(0.625, -0.25)
 shape = SubResource("RectangleShape2D_baqpq")
 
-[node name="RigidChainLine" type="PinJoint2D" parent="."]
-position = Vector2(614, 90)
+[node name="PinJoint2D" type="PinJoint2D" parent="StaticBody2D"]
+
+[node name="RigidChainLine" type="Node2D" parent="."]
+script = ExtResource("1_krbyb")
 node_a = NodePath("../StaticBody2D")
 node_b = NodePath("../GodotIcon")
-script = ExtResource("1_krbyb")
 
 [node name="GodotIcon" type="RigidBody2D" parent="."]
 position = Vector2(82, 85)
+linear_damp = 1.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="GodotIcon"]
-shape = SubResource("SegmentShape2D_j457r")
+shape = SubResource("RectangleShape2D_y542x")
 
 [node name="Sprite2D" type="Sprite2D" parent="GodotIcon"]
+scale = Vector2(0.2, 0.2)
 texture = ExtResource("2_akr6e")
 
 [node name="StaticBody2D2" type="StaticBody2D" parent="."]

@@ -1,48 +1,28 @@
-extends Joint2D
+extends Node2D
 class_name RigidChainLineOmega
 
 @export var num_chain_segments: int = 50
 @export var segment_length: int = 10
 @export var width: int = 1
+@export var node_a: NodePath
+@export var node_b: NodePath
 
-var packed : PackedScene
+var packed : PackedScene = preload("res://nodes/chain_segment.tscn")
 
 func _ready():
-	var segment_offset = Vector2(-segment_length,0)
-	var half_segment = segment_offset/2
-	var segment = SegmentShape2D.new()
-	segment.a = -half_segment
-	segment.b = half_segment
-	var packed_vec = PackedVector2Array([-half_segment, half_segment])
-	var body_base = RigidBody2D.new()
-	body_base.transform.origin = half_segment
-	var collision = CollisionShape2D.new()
-	collision.shape = segment
-	body_base.add_child(collision)
-	var line = Line2D.new()
-	line.points = packed_vec
-	line.width = width
-	body_base.add_child(line)
-	var pin = PinJoint2D.new()
-	pin.name = "PinJoint2D"
-	body_base.add_child(pin)
-	
-	packed = PackedScene.new()
-	packed.pack(body_base)
-	
 	var parent = get_node(node_a)
 	for i in range(num_chain_segments):
 		parent = add_piece(parent)
 	var last_joint = parent.get_node("PinJoint2D")
 	last_joint.node_a = parent.get_path()
-	last_joint.node_b = node_b
+	last_joint.node_b = get_node(node_b).get_path()
+	print(last_joint.node_b)
 	
 func add_piece(parent):
-	var joint = parent.get_node("PinJoint2D")
+	var child = parent.get_node("PinJoint2D")
 	var piece = packed.instantiate()
-	joint.add_child(piece)
-	joint.node_a = parent.get_path()
-	joint.node_b = piece.get_path()
-	
+	child.add_child(piece)
+	child.node_a = parent.get_path()
+	child.node_b = piece.get_path()
 	return piece
 	
