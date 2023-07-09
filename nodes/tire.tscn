@@ -18,6 +18,7 @@ size = Vector2(181, 80)
 size = Vector2(156, 113)
 
 [node name="Tire" type="RigidBody2D"]
+collision_mask = 255
 mass = 30.0
 inertia = 30000.0
 script = ExtResource("1_mn8ib")

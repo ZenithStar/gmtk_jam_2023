@@ -69,7 +69,6 @@ zoom = Vector2(0.25, 0.25)
 
 [node name="Tire" parent="." instance=ExtResource("6_5axqf")]
 position = Vector2(1729, 826)
-collision_mask = 255
 
 [node name="Dock" parent="." instance=ExtResource("5_iiol0")]
 position = Vector2(5410, -406)

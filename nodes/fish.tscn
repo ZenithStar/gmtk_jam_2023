@@ -15,7 +15,7 @@ radius = 56.0
 height = 184.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_6p4ut"]
-radius = 47.2969
+radius = 75.0
 
 [node name="Fish" type="RigidBody2D"]
 mass = 10.0
@@ -50,13 +50,24 @@ pitch_scale = 0.64
 stream = ExtResource("6_qwx3d")
 volume_db = -22.487
 
-[node name="InteractArea" type="Area2D" parent="."]
+[node name="InteractAreaRight" type="Area2D" parent="."]
+position = Vector2(128, 0)
 collision_mask = 255
 monitorable = false
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractArea"]
-position = Vector2(123, 8)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractAreaRight"]
 shape = SubResource("CircleShape2D_6p4ut")
 
-[node name="GrabOrigin" type="Node2D" parent="."]
-position = Vector2(81, 25)
+[node name="InteractAreaLeft" type="Area2D" parent="."]
+position = Vector2(-128, 0)
+collision_mask = 255
+monitorable = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractAreaLeft"]
+shape = SubResource("CircleShape2D_6p4ut")
+
+[node name="GrabOriginRight" type="Node2D" parent="."]
+position = Vector2(93, 19)
+
+[node name="GrabOriginLeft" type="Node2D" parent="."]
+position = Vector2(-93, 19)

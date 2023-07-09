@@ -7,17 +7,21 @@ var GRAVITY = ProjectSettings.get_setting("physics/2d/default_gravity") * Projec
 @export var MAX_THRUST = 5000
 @export var THRUST_COMMAND: Vector2 = Vector2(1,.4)
 @export var MAX_VELOCITY = 1000
-@export var grab_stiffness_override = 1000
+@export var grab_stiffness_override = 30
 
 var grabbers: Array = []
-var GRABBER_CLASS : PackedScene = preload("res://nodes/grab_joint.tscn")
+var GRABBER_CLASS_LEFT : PackedScene = preload("res://nodes/grab_joint_left.tscn")
+var GRABBER_CLASS_RIGHT : PackedScene = preload("res://nodes/grab_joint_right.tscn")
 func _process(delta):
 	if Input.is_action_just_pressed("interact"):
-		for body in $InteractArea.get_overlapping_bodies():
+		var area = $InteractAreaLeft if $Sprite2D.flip_h else $InteractAreaRight
+		var origin = $GrabOriginLeft if $Sprite2D.flip_h else $GrabOriginRight
+		var grabber_class = GRABBER_CLASS_LEFT if $Sprite2D.flip_h else GRABBER_CLASS_RIGHT
+		for body in area.get_overlapping_bodies():
 			if  not (body is Fish) and (body is PhysicsBody2D):
-				var grabber = GRABBER_CLASS.instantiate()
-				$GrabOrigin.add_child(grabber)
-				grabber.stiffness = grab_stiffness_override
+				var grabber = grabber_class.instantiate()
+				origin.add_child(grabber)
+				grabber.stiffness = grab_stiffness_override * body.mass
 				grabber.node_a = get_path()
 				grabber.node_b = body.get_path()
 				grabbers.append(grabber)
