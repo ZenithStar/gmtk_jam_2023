@@ -1,8 +1,6 @@
 extends RigidBody2D
 
-
 class_name Fisher
-
 
 @export var animate_rod = false
 

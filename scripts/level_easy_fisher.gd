@@ -1,12 +1,5 @@
-extends Node
-
-var level_lookup = [
-	"res://levels/level_easy.tscn",
-	"res://levels/level_1.tscn",
-	"res://levels/level_2.tscn",
-	"res://levels/test_level.tscn",
-	"res://levels/credits.tscn"
-]
+extends RigidBody2D
+class_name LevelEasyFisher
 
 # Called when the node enters the scene tree for the first time.
 func _ready():

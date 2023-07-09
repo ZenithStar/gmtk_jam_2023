@@ -9,7 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://bqm4k1621pbwk" path="res://nodes/cooler.tscn" id="7_0oqfp"]
 [ext_resource type="Script" path="res://scripts/rigid_chain_refactor.gd" id="7_urpvr"]
 [ext_resource type="PackedScene" uid="uid://ca6kdmd2nkoer" path="res://nodes/water.tscn" id="8_8jwvt"]
-[ext_resource type="PackedScene" path="res://nodes/fisher_skeleton_v2.tscn" id="8_toey7"]
+[ext_resource type="PackedScene" uid="uid://cya56trmcu1is" path="res://nodes/fisher_skeleton_v2.tscn" id="8_toey7"]
 [ext_resource type="PackedScene" uid="uid://ccw0qnfwedk08" path="res://nodes/tire.tscn" id="8_v3r64"]
 [ext_resource type="Script" path="res://scripts/Buoyant.gd" id="10_012p4"]
 [ext_resource type="Texture2D" uid="uid://dvyg8k6p4rwc7" path="res://assets/Fishing_Bobber.png" id="11_s3xhc"]
