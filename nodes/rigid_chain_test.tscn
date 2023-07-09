@@ -1,0 +1,46 @@
+[gd_scene load_steps=6 format=3 uid="uid://bts8ufbpaeteb"]
+
+[ext_resource type="Script" path="res://scripts/rigid_chain_refactor.gd" id="1_krbyb"]
+[ext_resource type="Texture2D" uid="uid://bb4khnta5dh6g" path="res://icon.svg" id="2_akr6e"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_baqpq"]
+size = Vector2(1, 1)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_j457r"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yta8n"]
+size = Vector2(128, 128)
+
+[node name="RigidChainLineTest" type="Node2D"]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2(614, 90)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(0.625, -0.25)
+shape = SubResource("RectangleShape2D_baqpq")
+
+[node name="RigidChainLine" type="PinJoint2D" parent="."]
+position = Vector2(614, 90)
+node_a = NodePath("../StaticBody2D")
+node_b = NodePath("../GodotIcon")
+script = ExtResource("1_krbyb")
+
+[node name="GodotIcon" type="RigidBody2D" parent="."]
+position = Vector2(82, 85)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GodotIcon"]
+shape = SubResource("SegmentShape2D_j457r")
+
+[node name="Sprite2D" type="Sprite2D" parent="GodotIcon"]
+texture = ExtResource("2_akr6e")
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="."]
+position = Vector2(392, 215)
+rotation = -0.827587
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D2"]
+texture = ExtResource("2_akr6e")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2"]
+shape = SubResource("RectangleShape2D_yta8n")
