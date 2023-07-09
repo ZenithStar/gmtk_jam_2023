@@ -12,16 +12,16 @@
 [ext_resource type="AudioStream" uid="uid://ctgvel5t0k7wh" path="res://assets/Audio/Music/Level1.wav" id="9_agrv3"]
 [ext_resource type="Script" path="res://scripts/string.gd" id="9_eqb0x"]
 [ext_resource type="PackedScene" uid="uid://bqm4k1621pbwk" path="res://nodes/cooler.tscn" id="11_l8i2o"]
-[ext_resource type="Texture2D" uid="uid://dm2rmaxd1vfqi" path="res://assets/fish.png" id="14_gw3x5"]
 [ext_resource type="Script" path="res://scripts/Buoyant.gd" id="14_ttc3b"]
+[ext_resource type="Texture2D" uid="uid://dvyg8k6p4rwc7" path="res://assets/Fishing_Bobber.png" id="15_l6bun"]
 [ext_resource type="PackedScene" uid="uid://cya56trmcu1is" path="res://nodes/fisher_skeleton_v2.tscn" id="16_cg44r"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_s1i3p"]
 atlas = ExtResource("3_uf7be")
 region = Rect2(233, 192, 1283, 706)
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_40lka"]
-radius = 5.0
+[sub_resource type="CircleShape2D" id="CircleShape2D_a1i2d"]
+radius = 21.2132
 
 [node name="Node2D" type="Node2D"]
 
@@ -113,7 +113,7 @@ position = Vector2(194, -779)
 metadata/_edit_group_ = true
 
 [node name="FishingLine" type="Node2D" parent="FisherSkeletonV2"]
-position = Vector2(-552, -366)
+position = Vector2(-674, 0)
 scale = Vector2(1.53846, 1.53846)
 script = ExtResource("9_eqb0x")
 ropeLength = 100
@@ -124,13 +124,14 @@ endOffset = Vector2(0, 1000)
 points = PackedVector2Array(0, 3)
 
 [node name="Bobber" type="RigidBody2D" parent="FisherSkeletonV2/FishingLine"]
-position = Vector2(-532, 1157)
+position = Vector2(-162.5, 506.35)
 script = ExtResource("14_ttc3b")
-buoyant_factor = 1.0
-
-[node name="Fish2" type="Sprite2D" parent="FisherSkeletonV2/FishingLine/Bobber"]
-scale = Vector2(0.1, 0.1)
-texture = ExtResource("14_gw3x5")
+buoyant_factor = 1.1
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="FisherSkeletonV2/FishingLine/Bobber"]
-shape = SubResource("CircleShape2D_40lka")
+shape = SubResource("CircleShape2D_a1i2d")
+
+[node name="BobberSprite" type="Sprite2D" parent="FisherSkeletonV2/FishingLine/Bobber"]
+position = Vector2(0, 34)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("15_l6bun")
