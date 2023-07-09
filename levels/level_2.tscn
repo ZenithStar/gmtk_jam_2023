@@ -1,8 +1,9 @@
-[gd_scene load_steps=15 format=3 uid="uid://vlnq7p5rh5t0"]
+[gd_scene load_steps=16 format=3 uid="uid://vlnq7p5rh5t0"]
 
 [ext_resource type="Script" path="res://scripts/level_2.gd" id="1_31pta"]
 [ext_resource type="PackedScene" uid="uid://b8v3g4exip626" path="res://nodes/pause_menu.tscn" id="1_fgr25"]
 [ext_resource type="PackedScene" uid="uid://d1bsjvvc22n4b" path="res://nodes/cloudy_skys.tscn" id="2_38ptp"]
+[ext_resource type="PackedScene" uid="uid://d3vuglshl78fq" path="res://nodes/flying_cigar.tscn" id="2_uoo0b"]
 [ext_resource type="TileSet" uid="uid://cmcpnwdeph0tl" path="res://assets/Mossy Tileset/tileset.tres" id="3_ba3xs"]
 [ext_resource type="Texture2D" uid="uid://bt7234vxy7i0s" path="res://assets/Mossy Tileset/Mossy - Decorations&Hazards.png" id="4_ivgfp"]
 [ext_resource type="PackedScene" uid="uid://bnb7bqebb5t0q" path="res://nodes/fish.tscn" id="5_xnxy2"]
@@ -22,6 +23,7 @@ size = Vector2(703, 25.25)
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_31pta")
+cigar_scene = ExtResource("2_uoo0b")
 
 [node name="PauseOverlayAttachPoint" type="CanvasLayer" parent="."]
 layer = 100
@@ -82,7 +84,7 @@ shape = SubResource("RectangleShape2D_l7xin")
 [node name="Oil Drum" parent="." instance=ExtResource("10_axlan")]
 position = Vector2(4200, -1058)
 script = ExtResource("14_xqhcx")
-buoyant_factor = 1.1
+buoyant_factor = 1.05
 
 [node name="Oil Drum2" parent="." instance=ExtResource("10_axlan")]
 position = Vector2(3841, 985)
@@ -118,3 +120,18 @@ follow_viewport_enabled = true
 [node name="Water" parent="Foreground" instance=ExtResource("12_y2o7a")]
 position = Vector2(0, 24606)
 linear_damp = 1.0
+
+[node name="SpawnCigarTimer" type="Timer" parent="."]
+wait_time = 6.2
+
+[node name="VictoryTimer" type="Timer" parent="."]
+one_shot = true
+
+[node name="StartCigars" type="Timer" parent="."]
+wait_time = 4.4
+one_shot = true
+
+[connection signal="body_entered" from="Oil Drum" to="." method="on_barrel_collide"]
+[connection signal="timeout" from="SpawnCigarTimer" to="." method="on_spawn_cigar_timer"]
+[connection signal="timeout" from="VictoryTimer" to="." method="on_victory_timer_expire"]
+[connection signal="timeout" from="StartCigars" to="." method="on_start_cigars"]
