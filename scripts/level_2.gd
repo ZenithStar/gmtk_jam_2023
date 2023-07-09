@@ -11,12 +11,15 @@ func _handle_victory():
 
 
 func _ready():
+	$Explosion.visible = false
 	$StartCigars.start()
 
 func on_barrel_collide(body):
 	if body is Cigar:
 		$VictoryTimer.start()
-		# animate explosion
+		$Explosion.visible = true
+		$Explosion.play()
+		$Boat.apply_impulse(Vector2(-200000, 200000))
 
 
 func on_victory_timer_expire():
