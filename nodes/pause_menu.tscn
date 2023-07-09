@@ -71,3 +71,11 @@ offset_top = 370.0
 offset_right = 747.0
 offset_bottom = 470.0
 text = "Resume Game"
+
+[node name="Retry" type="Button" parent="PauseOverlay"]
+layout_mode = 0
+offset_left = 533.0
+offset_top = 492.0
+offset_right = 747.0
+offset_bottom = 592.0
+text = "Retry"
