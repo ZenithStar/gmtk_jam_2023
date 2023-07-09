@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://xfua52i5qxih"]
+[gd_scene load_steps=8 format=3 uid="uid://7t6rsp6euvw"]
 
 [ext_resource type="Shader" path="res://shaders/water_effect.gdshader" id="1_ge37t"]
 [ext_resource type="Shader" path="res://shaders/wind_waker_water.gdshader" id="2_cf68m"]

@@ -45,7 +45,7 @@ offset_top = -160.0
 offset_bottom = -134.0
 grow_horizontal = 2
 grow_vertical = 2
-text = "Current Level %s placeholder"
+text = "Current Level %s"
 horizontal_alignment = 1
 
 [node name="ReturnToMainMenu" type="Button" parent="PauseOverlay"]
