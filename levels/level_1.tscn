@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://c7g6dik1pup38"]
+[gd_scene load_steps=17 format=3 uid="uid://c7g6dik1pup38"]
 
 [ext_resource type="PackedScene" uid="uid://b8v3g4exip626" path="res://nodes/pause_menu.tscn" id="1_bqhws"]
 [ext_resource type="Script" path="res://levels/level_1.gd" id="1_g4cdt"]
@@ -7,12 +7,21 @@
 [ext_resource type="PackedScene" uid="uid://bnb7bqebb5t0q" path="res://nodes/fish.tscn" id="5_pvqjx"]
 [ext_resource type="PackedScene" uid="uid://bu44xb5n13kcr" path="res://nodes/dock.tscn" id="6_m8shv"]
 [ext_resource type="PackedScene" path="res://nodes/cooler.tscn" id="7_0oqfp"]
+[ext_resource type="Script" path="res://scripts/rigid_chain_refactor.gd" id="7_urpvr"]
 [ext_resource type="PackedScene" uid="uid://ca6kdmd2nkoer" path="res://nodes/water.tscn" id="8_8jwvt"]
-[ext_resource type="PackedScene" uid="uid://c5h56t000mwfd" path="res://nodes/fisher.tscn" id="8_irtay"]
+[ext_resource type="PackedScene" uid="uid://cya56trmcu1is" path="res://nodes/fisher_skeleton_v2.tscn" id="8_toey7"]
 [ext_resource type="PackedScene" uid="uid://ccw0qnfwedk08" path="res://nodes/tire.tscn" id="8_v3r64"]
+[ext_resource type="Script" path="res://scripts/Buoyant.gd" id="10_012p4"]
+[ext_resource type="Texture2D" uid="uid://dvyg8k6p4rwc7" path="res://assets/Fishing_Bobber.png" id="11_s3xhc"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_1pfio"]
+friction = 0.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_h2fpv"]
+radius = 17.504
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ji8ca"]
-size = Vector2(874, 202)
+size = Vector2(2931, 202)
 
 [node name="Node2D2" type="Node2D"]
 script = ExtResource("1_g4cdt")
@@ -50,8 +59,38 @@ zoom = Vector2(0.25, 0.25)
 
 [node name="Dock" parent="." instance=ExtResource("6_m8shv")]
 position = Vector2(5410, -406)
-collision_layer = 2
-collision_mask = 2
+
+[node name="FisherSkeletonV2" parent="." instance=ExtResource("8_toey7")]
+position = Vector2(4228, -620)
+mass = 75.0
+
+[node name="PinJoint2D" type="PinJoint2D" parent="FisherSkeletonV2"]
+position = Vector2(-578, -400)
+
+[node name="Bobber" type="RigidBody2D" parent="FisherSkeletonV2/PinJoint2D"]
+position = Vector2(-2560, 0)
+mass = 0.1
+physics_material_override = SubResource("PhysicsMaterial_1pfio")
+script = ExtResource("10_012p4")
+buoyant_factor = 1.1
+
+[node name="Fish2" type="Sprite2D" parent="FisherSkeletonV2/PinJoint2D/Bobber"]
+position = Vector2(0.299316, 14.301)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("11_s3xhc")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="FisherSkeletonV2/PinJoint2D/Bobber"]
+shape = SubResource("CircleShape2D_h2fpv")
+
+[node name="RigidChainLineOmega" type="Node2D" parent="."]
+position = Vector2(56624, -76111)
+scale = Vector2(300, 100)
+script = ExtResource("7_urpvr")
+num_chain_segments = 80
+segment_length = 32
+width = 3
+node_a = NodePath("../FisherSkeletonV2")
+node_b = NodePath("../FisherSkeletonV2/PinJoint2D/Bobber")
 
 [node name="Midground" type="TileMap" parent="."]
 z_index = 2
@@ -69,23 +108,18 @@ position = Vector2(0, 24606)
 linear_damp = 0.0
 
 [node name="Cooler" parent="." instance=ExtResource("7_0oqfp")]
-position = Vector2(4226, -564)
-collision_layer = 2
-collision_mask = 2
-
-[node name="Fisher" parent="." instance=ExtResource("8_irtay")]
-position = Vector2(4195, -719)
-collision_layer = 2
-collision_mask = 2
+position = Vector2(4554, -566)
 
 [node name="Tire" parent="." instance=ExtResource("8_v3r64")]
 position = Vector2(2915, 860)
 
 [node name="Area2D" type="Area2D" parent="."]
 position = Vector2(1747, 2964)
+collision_layer = 3
+collision_mask = 3
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(405, 23)
+position = Vector2(772.5, -2013)
 shape = SubResource("RectangleShape2D_ji8ca")
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

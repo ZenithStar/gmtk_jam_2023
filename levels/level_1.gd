@@ -8,5 +8,5 @@ func _handle_victory():
 
 
 func _on_area_2d_body_entered(body):
-	if body is Tire:
+	if body is Fisher:
 		_handle_victory()

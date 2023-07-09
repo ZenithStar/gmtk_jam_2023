@@ -1,6 +1,5 @@
 extends Node2D
 
-
 var PULL_BACK_ANGLE_DELTA = PI/2
 var do_nothing_time = 4
 var PULL_BACK_TIME = 2
