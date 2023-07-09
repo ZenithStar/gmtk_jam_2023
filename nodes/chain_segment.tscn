@@ -1,0 +1,19 @@
+[gd_scene load_steps=2 format=3 uid="uid://2gwnnjsvxpqk"]
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_l4ida"]
+b = Vector2(-10, 0)
+
+[node name="ChainSegment" type="RigidBody2D"]
+mass = 0.1
+linear_damp = 10.0
+angular_damp = 10.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("SegmentShape2D_l4ida")
+
+[node name="Line2D" type="Line2D" parent="."]
+points = PackedVector2Array(0, 0, -10, 0)
+width = 1.0
+
+[node name="PinJoint2D" type="PinJoint2D" parent="."]
+position = Vector2(-10, 0)
