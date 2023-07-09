@@ -1,0 +1,327 @@
+[gd_scene load_steps=18 format=3 uid="uid://ccvnybhtbkycl"]
+
+[ext_resource type="FontFile" uid="uid://do032k03kny33" path="res://assets/Fonts/mursgothic-widedark.otf" id="1_cl05j"]
+[ext_resource type="Script" path="res://scripts/victory.gd" id="1_jj253"]
+[ext_resource type="Texture2D" uid="uid://dk607jmus4p8n" path="res://assets/Figure_Parts.png" id="3_ai33v"]
+[ext_resource type="Texture2D" uid="uid://ce3g6mejcvw48" path="res://assets/Trash_Sprites_2.png" id="4_5u7kg"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ssq5l"]
+atlas = ExtResource("3_ai33v")
+region = Rect2(34.8331, 57.1669, 721.026, 637.231)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b4ck2"]
+atlas = ExtResource("4_5u7kg")
+region = Rect2(71.6001, 564.3, 231, 321.2)
+
+[sub_resource type="Animation" id="Animation_fty1r"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-63.5625, 38.0625)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Barral:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1312, 317)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Barral:rotation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_yd8xo"]
+resource_name = "fly_across_screen"
+length = 5.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-63.5625, 38.0625), Vector2(1203, 633)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [2.54644, -5.29882]
+}
+
+[sub_resource type="Animation" id="Animation_42or3"]
+resource_name = "barral_fly_around_animation"
+length = 5.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Barral:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 3, 5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(1312, 317), Vector2(604, 70), Vector2(47, 425)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Barral:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 3, 5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [0.0, -1.01229, -2.82918]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_hlpwu"]
+_data = {
+"RESET": SubResource("Animation_fty1r"),
+"barral_fly_around_animation": SubResource("Animation_42or3"),
+"fly_across_screen": SubResource("Animation_yd8xo")
+}
+
+[sub_resource type="Animation" id="Animation_tqaj1"]
+resource_name = "barral_fly"
+length = 5.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Barral:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2, 5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(1312, 317), Vector2(614, 30), Vector2(28.9999, 523)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Barral:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 2, 5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [0.0, -1.5132, -3.70882]
+}
+
+[sub_resource type="Animation" id="Animation_vqiyk"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Barral:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1312, 317)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Barral:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_r6ocp"]
+_data = {
+"RESET": SubResource("Animation_vqiyk"),
+"barral_fly": SubResource("Animation_tqaj1")
+}
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wvve6"]
+atlas = ExtResource("3_ai33v")
+region = Rect2(1808.09, 1089.18, 289.091, 215.455)
+
+[sub_resource type="Animation" id="Animation_35q8v"]
+resource_name = "cooler_fly"
+length = 5.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Cooler:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.6, 3.5, 5),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(225, 698), Vector2(942, 655), Vector2(1216, 31.9999), Vector2(695, 6)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Cooler:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1.6, 3.5, 5),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [0.0, -0.907571, -2.19388, -3.70708]
+}
+
+[sub_resource type="Animation" id="Animation_m0521"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Cooler:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(225, 698)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Cooler:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_2fwpd"]
+_data = {
+"RESET": SubResource("Animation_m0521"),
+"cooler_fly": SubResource("Animation_35q8v")
+}
+
+[node name="victory" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_jj253")
+
+[node name="VictoryOverlay" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.352941)
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="victory" type="RichTextLabel" parent="HBoxContainer"]
+clip_contents = false
+custom_minimum_size = Vector2(500, 80)
+layout_mode = 2
+size_flags_horizontal = 6
+theme_override_colors/font_outline_color = Color(0.890196, 0.568627, 0.298039, 1)
+theme_override_constants/outline_size = 10
+theme_override_fonts/normal_font = ExtResource("1_cl05j")
+theme_override_font_sizes/normal_font_size = 90
+text = "VICTORY!"
+fit_content = true
+scroll_active = false
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 5.0
+one_shot = true
+autostart = true
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-63.5625, 38.0625)
+scale = Vector2(0.631241, 0.643446)
+texture = SubResource("AtlasTexture_ssq5l")
+
+[node name="Barral" type="Sprite2D" parent="."]
+position = Vector2(1312, 317)
+texture = SubResource("AtlasTexture_b4ck2")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_hlpwu")
+}
+
+[node name="AnimationPlayer2" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_r6ocp")
+}
+
+[node name="Cooler" type="Sprite2D" parent="."]
+position = Vector2(225, 698)
+texture = SubResource("AtlasTexture_wvve6")
+
+[node name="AnimationPlayer3" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_2fwpd")
+}
