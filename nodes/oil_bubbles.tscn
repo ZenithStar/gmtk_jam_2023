@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://ckrc6nt46ov7w"]
+[gd_scene load_steps=4 format=3 uid="uid://cgwsh0pdtonwg"]
 
 [ext_resource type="Shader" path="res://shaders/oil_bubbles.gdshader" id="1_pctxi"]
 [ext_resource type="Texture2D" uid="uid://bb4khnta5dh6g" path="res://icon.svg" id="2_edrde"]

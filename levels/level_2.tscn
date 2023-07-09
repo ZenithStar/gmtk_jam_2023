@@ -1,15 +1,15 @@
-[gd_scene load_steps=39 format=3 uid="uid://vlnq7p5rh5t0"]
+[gd_scene load_steps=41 format=3 uid="uid://c1er2hw5yn7a7"]
 
 [ext_resource type="Script" path="res://scripts/level_2.gd" id="1_31pta"]
 [ext_resource type="PackedScene" uid="uid://b8v3g4exip626" path="res://nodes/pause_menu.tscn" id="1_fgr25"]
 [ext_resource type="PackedScene" uid="uid://d1bsjvvc22n4b" path="res://nodes/cloudy_skys.tscn" id="2_38ptp"]
-[ext_resource type="PackedScene" uid="uid://d3vuglshl78fq" path="res://nodes/flying_cigar.tscn" id="2_uoo0b"]
+[ext_resource type="PackedScene" path="res://nodes/flying_cigar.tscn" id="2_uoo0b"]
 [ext_resource type="TileSet" uid="uid://cmcpnwdeph0tl" path="res://assets/Mossy Tileset/tileset.tres" id="3_ba3xs"]
 [ext_resource type="Texture2D" uid="uid://bt7234vxy7i0s" path="res://assets/Mossy Tileset/Mossy - Decorations&Hazards.png" id="4_ivgfp"]
 [ext_resource type="PackedScene" uid="uid://bnb7bqebb5t0q" path="res://nodes/fish.tscn" id="5_xnxy2"]
-[ext_resource type="PackedScene" uid="uid://cya56trmcu1is" path="res://nodes/fisher_skeleton_v2.tscn" id="6_2jy0w"]
-[ext_resource type="PackedScene" uid="uid://bqm4k1621pbwk" path="res://nodes/cooler.tscn" id="8_t7f7k"]
-[ext_resource type="PackedScene" uid="uid://vll6dlotbs8b" path="res://nodes/oil_drum.tscn" id="10_axlan"]
+[ext_resource type="PackedScene" path="res://nodes/fisher_skeleton_v2.tscn" id="6_2jy0w"]
+[ext_resource type="PackedScene" path="res://nodes/cooler.tscn" id="8_t7f7k"]
+[ext_resource type="PackedScene" uid="uid://r1paro0r2hcb" path="res://nodes/oil_drum.tscn" id="10_axlan"]
 [ext_resource type="Texture2D" uid="uid://ds5f2ddjcvkj8" path="res://assets/explosion/F12.png" id="10_yncsn"]
 [ext_resource type="PackedScene" uid="uid://b8y45m33fj3im" path="res://nodes/boat.tscn" id="11_msrwi"]
 [ext_resource type="Texture2D" uid="uid://dkf8dqogp1bne" path="res://assets/explosion/F13.png" id="11_p6fce"]
@@ -35,6 +35,8 @@
 [ext_resource type="Texture2D" uid="uid://c2pf1du6fvxvl" path="res://assets/explosion/F31.png" id="29_qagvt"]
 [ext_resource type="Texture2D" uid="uid://cy7ij2vt715yy" path="res://assets/explosion/F32.png" id="30_tg6rr"]
 [ext_resource type="Texture2D" uid="uid://cmdry260x1cmt" path="res://assets/explosion/F36.png" id="31_5ui2y"]
+[ext_resource type="AudioStream" uid="uid://e45ropo1tkn" path="res://assets/Audio/Sounds/explosion1.wav" id="35_g6t33"]
+[ext_resource type="AudioStream" uid="uid://ctgvel5t0k7wh" path="res://assets/Audio/Music/Level1.wav" id="36_mv3hn"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_s1i3p"]
 atlas = ExtResource("4_ivgfp")
@@ -233,6 +235,15 @@ one_shot = true
 [node name="StartCigars" type="Timer" parent="."]
 wait_time = 4.4
 one_shot = true
+
+[node name="level2" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("36_mv3hn")
+volume_db = -27.0
+autoplay = true
+
+[node name="explosion1" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("35_g6t33")
+volume_db = -20.0
 
 [connection signal="body_entered" from="OilDrum" to="." method="on_barrel_collide"]
 [connection signal="timeout" from="SpawnCigarTimer" to="." method="on_spawn_cigar_timer"]

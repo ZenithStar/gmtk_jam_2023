@@ -44,11 +44,6 @@ theme_override_fonts/normal_font = ExtResource("2_88jiy")
 theme_override_font_sizes/normal_font_size = 90
 text = "Rod Reversal"
 
-[node name="titleTheme" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("6_2k67x")
-volume_db = -29.982
-autoplay = true
-
 [node name="Rock" type="Sprite2D" parent="."]
 position = Vector2(322, 497)
 scale = Vector2(0.529581, 0.565534)
@@ -128,5 +123,5 @@ horizontal_alignment = 2
 
 [node name="title" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("6_2k67x")
-volume_db = -35.604
+volume_db = -30.0
 autoplay = true
