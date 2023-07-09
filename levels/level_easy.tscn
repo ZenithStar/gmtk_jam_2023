@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://bw7fvryoatl7a"]
+[gd_scene load_steps=17 format=3 uid="uid://c35l3ek2b7er"]
 
 [ext_resource type="Script" path="res://scripts/level_easy.gd" id="1_044ar"]
 [ext_resource type="PackedScene" uid="uid://b8v3g4exip626" path="res://nodes/pause_menu.tscn" id="2_wj5xi"]
@@ -6,13 +6,14 @@
 [ext_resource type="TileSet" uid="uid://cmcpnwdeph0tl" path="res://assets/Mossy Tileset/tileset.tres" id="4_07b6a"]
 [ext_resource type="PackedScene" uid="uid://bnb7bqebb5t0q" path="res://nodes/fish.tscn" id="5_tnegn"]
 [ext_resource type="PackedScene" uid="uid://ca6kdmd2nkoer" path="res://nodes/water.tscn" id="7_mo4ov"]
-[ext_resource type="PackedScene" uid="uid://bqm4k1621pbwk" path="res://nodes/cooler.tscn" id="8_erlf5"]
+[ext_resource type="PackedScene" path="res://nodes/cooler.tscn" id="8_erlf5"]
 [ext_resource type="Script" path="res://scripts/level_easy_fisher.gd" id="9_1im8c"]
 [ext_resource type="Script" path="res://scripts/string.gd" id="9_bdnnt"]
-[ext_resource type="PackedScene" uid="uid://c5h56t000mwfd" path="res://nodes/fisher.tscn" id="9_cnybd"]
+[ext_resource type="PackedScene" path="res://nodes/fisher.tscn" id="9_cnybd"]
 [ext_resource type="Script" path="res://scripts/Buoyant.gd" id="10_g6oo2"]
 [ext_resource type="PackedScene" uid="uid://b8y45m33fj3im" path="res://nodes/boat.tscn" id="10_qcqjy"]
 [ext_resource type="Texture2D" uid="uid://dvyg8k6p4rwc7" path="res://assets/Fishing_Bobber.png" id="11_hjq56"]
+[ext_resource type="AudioStream" uid="uid://ctgvel5t0k7wh" path="res://assets/Audio/Music/Level1.wav" id="14_icc5t"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_p4a85"]
 radius = 21.2132
@@ -112,5 +113,10 @@ shape = SubResource("RectangleShape2D_ji8ca")
 z_index = 1
 position = Vector2(-55, -366)
 angular_damp = 50.0
+
+[node name="level1" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("14_icc5t")
+volume_db = -27.0
+autoplay = true
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

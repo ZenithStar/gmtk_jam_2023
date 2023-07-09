@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://c7g6dik1pup38"]
+[gd_scene load_steps=20 format=3 uid="uid://bkfi3ioistlud"]
 
 [ext_resource type="PackedScene" uid="uid://b8v3g4exip626" path="res://nodes/pause_menu.tscn" id="1_bqhws"]
 [ext_resource type="Script" path="res://levels/level_1.gd" id="1_g4cdt"]
@@ -6,14 +6,15 @@
 [ext_resource type="TileSet" uid="uid://cmcpnwdeph0tl" path="res://assets/Mossy Tileset/tileset.tres" id="3_3ffhe"]
 [ext_resource type="PackedScene" uid="uid://bnb7bqebb5t0q" path="res://nodes/fish.tscn" id="5_pvqjx"]
 [ext_resource type="PackedScene" uid="uid://bu44xb5n13kcr" path="res://nodes/dock.tscn" id="6_m8shv"]
-[ext_resource type="PackedScene" uid="uid://bqm4k1621pbwk" path="res://nodes/cooler.tscn" id="7_0oqfp"]
+[ext_resource type="PackedScene" path="res://nodes/cooler.tscn" id="7_0oqfp"]
 [ext_resource type="Script" path="res://scripts/rigid_chain_refactor.gd" id="7_urpvr"]
 [ext_resource type="PackedScene" uid="uid://ca6kdmd2nkoer" path="res://nodes/water.tscn" id="8_8jwvt"]
-[ext_resource type="PackedScene" uid="uid://cya56trmcu1is" path="res://nodes/fisher_skeleton_v2.tscn" id="8_toey7"]
-[ext_resource type="PackedScene" uid="uid://ccw0qnfwedk08" path="res://nodes/tire.tscn" id="8_v3r64"]
+[ext_resource type="PackedScene" path="res://nodes/fisher_skeleton_v2.tscn" id="8_toey7"]
+[ext_resource type="PackedScene" path="res://nodes/tire.tscn" id="8_v3r64"]
 [ext_resource type="Script" path="res://scripts/Buoyant.gd" id="10_012p4"]
 [ext_resource type="Texture2D" uid="uid://dvyg8k6p4rwc7" path="res://assets/Fishing_Bobber.png" id="11_s3xhc"]
 [ext_resource type="Texture2D" uid="uid://bt7234vxy7i0s" path="res://assets/Mossy Tileset/Mossy - Decorations&Hazards.png" id="13_jht5y"]
+[ext_resource type="AudioStream" uid="uid://ctgvel5t0k7wh" path="res://assets/Audio/Music/Level1.wav" id="15_2nj5a"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_1pfio"]
 friction = 0.0
@@ -142,5 +143,10 @@ collision_mask = 3
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2(772.5, -2013)
 shape = SubResource("RectangleShape2D_ji8ca")
+
+[node name="level1" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("15_2nj5a")
+volume_db = -27.0
+autoplay = true
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

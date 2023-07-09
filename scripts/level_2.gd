@@ -21,6 +21,7 @@ func on_barrel_collide(body):
 		$Explosion.visible = true
 		$OilDrum.visible = false
 		$Explosion.play()
+		$explosion1.play()
 		$Boat.apply_impulse(Vector2(-200000, 200000))
 
 

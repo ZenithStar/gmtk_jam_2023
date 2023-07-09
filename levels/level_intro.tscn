@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://dp1pk8uc5nihv"]
+[gd_scene load_steps=22 format=3 uid="uid://cc0o7xf3cuone"]
 
 [ext_resource type="Script" path="res://levels/level_1.gd" id="1_ih306"]
 [ext_resource type="PackedScene" uid="uid://b8v3g4exip626" path="res://nodes/pause_menu.tscn" id="2_trrnw"]
@@ -11,9 +11,9 @@
 [ext_resource type="PackedScene" uid="uid://ca6kdmd2nkoer" path="res://nodes/water.tscn" id="7_4sfjc"]
 [ext_resource type="Texture2D" uid="uid://b0uqupcym1075" path="res://assets/Mossy Tileset/Mossy - Hanging Plants.png" id="7_xxlwh"]
 [ext_resource type="Texture2D" uid="uid://ce3g6mejcvw48" path="res://assets/Trash_Sprites_2.png" id="8_15j7h"]
-[ext_resource type="PackedScene" uid="uid://bqm4k1621pbwk" path="res://nodes/cooler.tscn" id="8_oc3qv"]
-[ext_resource type="PackedScene" uid="uid://c5h56t000mwfd" path="res://nodes/fisher.tscn" id="9_ib38s"]
-[ext_resource type="PackedScene" uid="uid://ccw0qnfwedk08" path="res://nodes/tire.tscn" id="10_3pige"]
+[ext_resource type="PackedScene" path="res://nodes/cooler.tscn" id="8_oc3qv"]
+[ext_resource type="PackedScene" path="res://nodes/fisher.tscn" id="9_ib38s"]
+[ext_resource type="PackedScene" path="res://nodes/tire.tscn" id="10_3pige"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_6xlp6"]
 atlas = ExtResource("5_ln662")
