@@ -3,7 +3,8 @@
 [ext_resource type="Texture2D" uid="uid://bujrlbhbp82m7" path="res://assets/Animaton_Parts.png" id="1_so2ne"]
 [ext_resource type="Texture2D" uid="uid://iwqjbhhl0qfd" path="res://assets/Fisher.png" id="2_4p1au"]
 
-[node name="FisherSkeleton" type="Node2D"]
+[node name="FisherSkeleton" type="RigidBody2D"]
+metadata/_edit_group_ = true
 
 [node name="polygons" type="Node" parent="."]
 
@@ -115,3 +116,7 @@ rest = Transform2D(1, 0, 0, 1, -29, -188)
 [node name="hat" type="Bone2D" parent="Skeleton2D/torso/head"]
 position = Vector2(15, -159)
 rest = Transform2D(1, 0, 0, 1, 15, -159)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+position = Vector2(1108, 459)
+polygon = PackedVector2Array(256, 79, 187, 267, 24, 269, 26, 365, 30, 491, -192, 494, -202, 387, -131, 356, -201, 210, -103, 124, -11, 115, -4, -135, -78, -215, -54, -313, 30, -390, 170, -335, 156, -196)
