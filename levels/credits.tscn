@@ -1,0 +1,172 @@
+[gd_scene load_steps=12 format=3 uid="uid://b7w8ixg5p3yca"]
+
+[ext_resource type="FontFile" uid="uid://do032k03kny33" path="res://assets/Fonts/mursgothic-widedark.otf" id="1_nd5x7"]
+[ext_resource type="Script" path="res://scripts/credits.gd" id="1_oyppi"]
+[ext_resource type="TileSet" uid="uid://cmcpnwdeph0tl" path="res://assets/Mossy Tileset/tileset.tres" id="2_qooip"]
+[ext_resource type="Texture2D" uid="uid://bt7234vxy7i0s" path="res://assets/Mossy Tileset/Mossy - Decorations&Hazards.png" id="2_ycip1"]
+[ext_resource type="Texture2D" uid="uid://b0uqupcym1075" path="res://assets/Mossy Tileset/Mossy - Hanging Plants.png" id="5_la2d1"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_te8lf"]
+atlas = ExtResource("2_ycip1")
+region = Rect2(2873.91, 0.60965, 1143.05, 975.958)
+
+[sub_resource type="Animation" id="Animation_sx4h7"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Container:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(750, 300)]
+}
+
+[sub_resource type="Animation" id="Animation_fq3ub"]
+resource_name = "text_scroll"
+length = 20.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Container:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 20),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(750, 300), Vector2(750, -500)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_4du5e"]
+_data = {
+"RESET": SubResource("Animation_sx4h7"),
+"text_scroll": SubResource("Animation_fq3ub")
+}
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o26h2"]
+atlas = ExtResource("2_ycip1")
+region = Rect2(87.6003, 3545.53, 1382.29, 531.65)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7pooh"]
+atlas = ExtResource("5_la2d1")
+region = Rect2(64.7283, 1358.24, 558.233, 1484.82)
+
+[node name="credits" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_oyppi")
+
+[node name="Rock" type="Sprite2D" parent="."]
+position = Vector2(624.75, 485.25)
+scale = Vector2(0.687227, 0.640513)
+texture = SubResource("AtlasTexture_te8lf")
+
+[node name="Ground" type="TileMap" parent="."]
+tile_set = ExtResource("2_qooip")
+format = 2
+layer_0/tile_data = PackedInt32Array(131069, 65536, 0, 131070, 65536, 0, 131071, 65536, 0, 65536, 65536, 0, 65537, 65536, 0, 65538, 65536, 0)
+
+[node name="Container" type="Container" parent="."]
+layout_mode = 1
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -530.0
+offset_top = 300.0
+offset_right = -30.0
+offset_bottom = 579.999
+grow_horizontal = 0
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Container"]
+layout_mode = 2
+
+[node name="ArtistsLabel" type="RichTextLabel" parent="Container/VBoxContainer"]
+custom_minimum_size = Vector2(500, 50)
+layout_mode = 2
+theme_override_fonts/normal_font = ExtResource("1_nd5x7")
+theme_override_font_sizes/normal_font_size = 42
+text = "Artist"
+
+[node name="Artists" type="RichTextLabel" parent="Container/VBoxContainer"]
+custom_minimum_size = Vector2(500, 70)
+layout_mode = 2
+text = "Dameezy
+"
+
+[node name="DevelopersLabel" type="RichTextLabel" parent="Container/VBoxContainer"]
+custom_minimum_size = Vector2(500, 50)
+layout_mode = 2
+theme_override_fonts/normal_font = ExtResource("1_nd5x7")
+theme_override_font_sizes/normal_font_size = 42
+text = "Developers"
+
+[node name="Developers" type="RichTextLabel" parent="Container/VBoxContainer"]
+custom_minimum_size = Vector2(500, 220)
+layout_mode = 2
+size_flags_horizontal = 3
+bbcode_enabled = true
+text = "ZenithStar
+Robz
+LunaFutures
+PoundDefined
+DonSintaro
+Aml2732
+"
+
+[node name="MusicLabel" type="RichTextLabel" parent="Container/VBoxContainer"]
+custom_minimum_size = Vector2(500, 50)
+layout_mode = 2
+theme_override_fonts/normal_font = ExtResource("1_nd5x7")
+theme_override_font_sizes/normal_font_size = 42
+text = "Music"
+
+[node name="Music" type="RichTextLabel" parent="Container/VBoxContainer"]
+custom_minimum_size = Vector2(500, 80)
+layout_mode = 2
+text = "DonSintaro"
+
+[node name="ResourcesLabel" type="RichTextLabel" parent="Container/VBoxContainer"]
+custom_minimum_size = Vector2(500, 50)
+layout_mode = 2
+theme_override_fonts/normal_font = ExtResource("1_nd5x7")
+theme_override_font_sizes/normal_font_size = 42
+text = "Resources"
+
+[node name="Resources" type="RichTextLabel" parent="Container/VBoxContainer"]
+custom_minimum_size = Vector2(500, 200)
+layout_mode = 2
+text = "- https://maaot.itch.io/mossy-cavern
+- https://godotshaders.com/shader/2d-water-distortion-effect-godot-4/
+- https://godotshaders.com/shader/cloudy-skies/
+- https://www.instagram.com/mkobuzan/
+- Godot engine!"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_4du5e")
+}
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 15.0
+one_shot = true
+autostart = true
+
+[node name="WigglyWoos" type="Sprite2D" parent="."]
+position = Vector2(386, 559)
+scale = Vector2(0.656657, 0.582392)
+texture = SubResource("AtlasTexture_o26h2")
+
+[node name="hangingThing" type="Sprite2D" parent="."]
+position = Vector2(398, 48)
+scale = Vector2(0.412186, 0.500674)
+texture = SubResource("AtlasTexture_7pooh")
