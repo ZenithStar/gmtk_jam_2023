@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://dk607jmus4p8n" path="res://assets/Figure_Parts.png" id="2_5pyjf"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_y8n3q"]
-size = Vector2(166, 418)
+size = Vector2(274, 418)
 
 [node name="FisherSkeletonV2" type="RigidBody2D"]
 position = Vector2(1, 0)
@@ -112,6 +112,5 @@ uv = PackedVector2Array(287.654, 1104.13, 229.63, 1116.47, 185.185, 1254.13, 114
 bones = ["torso", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "torso/leg", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "torso/head", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "torso/head/hat", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "torso/shoulder1", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "torso/shoulder1/arm1", PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1), "torso/shoulder1/arm1/rod", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "torso/arm2", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-visible = false
-position = Vector2(-15, -62)
+position = Vector2(-57, -62)
 shape = SubResource("RectangleShape2D_y8n3q")
