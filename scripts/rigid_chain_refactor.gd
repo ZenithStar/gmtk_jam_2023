@@ -1,3 +1,4 @@
+# https://steemit.com/utopian-io/@sp33dy/tutorial-godot-engine-v3-gdscript-rigidbody-rope
 extends Node2D
 class_name RigidChainLineOmega
 

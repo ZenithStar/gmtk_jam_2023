@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://cw52ue6ygic1i"]
+
+[node name="GrabJoint" type="DampedSpringJoint2D"]
+rotation = -1.49672
+disable_collision = false
+length = 1.0
+stiffness = 64.0
