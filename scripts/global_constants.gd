@@ -3,6 +3,8 @@ extends Node
 var level_lookup = [
 	"res://levels/test_level.tscn",
 	"res://levels/angela_level.tscn",
+	"res://levels/level_1.tscn",
+	"res://levels/level_2.tscn",
 	"test",
 	"test",
 	"test",
