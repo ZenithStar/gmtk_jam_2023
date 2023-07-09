@@ -1,4 +1,5 @@
 extends RigidBody2D
+class_name Fish
 
 
 @onready var water = get_parent().get_node('Foreground/Water')
@@ -14,44 +15,47 @@ func maybe_play_swim_sounds(is_in_water):
 	var swimSounds = false
 	var someSound = 0;
 	
-	if Input.is_action_pressed("right"):
+	if Input.is_action_just_pressed("right"):
 		if is_in_water:
-			if Input.is_action_just_pressed("right"):
-				swimSounds = true
-				
-	elif Input.is_action_pressed("left"):
+			swimSounds = true
+			
+	if Input.is_action_just_pressed("left"):
 		if is_in_water:
-			if Input.is_action_just_pressed("left"):
-				swimSounds = true
-				
-	if Input.is_action_pressed("down"):
+			swimSounds = true
+		
+	if Input.is_action_just_pressed("down"):
 		if is_in_water:
-			if Input.is_action_just_pressed("down"):
-				swimSounds = true
-				
-	elif Input.is_action_pressed("up"):
+			swimSounds = true
+
+	if Input.is_action_just_pressed("up"):
 		if is_in_water:
-			if Input.is_action_just_pressed("up"):
-				swimSounds = true
+			swimSounds = true
 
 	if swimSounds:
 		someSound = (randi() % 5)
-		if someSound == 1:
+		if someSound == 0:
 			$move1.play()
-			swimSounds = false
-		elif someSound == 2:
+			return
+		elif someSound == 1:
 			$move2.play()
-			swimSounds = false
-		elif someSound == 3:
+			return
+		elif someSound == 2:
 			$move3.play()
-			swimSounds = false
-		elif someSound == 4:
-			swimSounds = false
+			return
 		else:
-			swimSounds = false
+			return
+	# no sound 40% of the time
 
+var first_splash = true
+
+func splashes():
+	if first_splash:
+		first_splash = false
+	else:
+		$splash.play()
 
 var first_call = true
+
 func _integrate_forces(state):
 	if first_call:
 		# for some reason the water.overlaps_body(self) is wrong the first time 
@@ -59,6 +63,7 @@ func _integrate_forces(state):
 		first_call = false
 		return
 
+	
 	var is_in_water = water.overlaps_body(self)
 	maybe_play_swim_sounds(is_in_water)
 
