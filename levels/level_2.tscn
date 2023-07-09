@@ -21,12 +21,10 @@ region = Rect2(233, 192, 1283, 706)
 
 [node name="PauseOverlayAttachPoint" type="CanvasLayer" parent="."]
 layer = 100
-visible = false
 
 [node name="PauseMenu" parent="PauseOverlayAttachPoint" instance=ExtResource("1_fgr25")]
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
-visible = false
 
 [node name="ParallaxLayer0" type="ParallaxLayer" parent="ParallaxBackground"]
 motion_scale = Vector2(0, 0)
@@ -101,7 +99,6 @@ layer_0/tile_data = PackedInt32Array(131075, 65536, 0, 196611, 65536, 1, 262147,
 
 [node name="ParallaxForeground" type="ParallaxBackground" parent="."]
 layer = 1
-visible = false
 
 [node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxForeground"]
 motion_scale = Vector2(2, 1)
@@ -115,7 +112,6 @@ layer_0/tile_data = PackedInt32Array(-20, 65538, 0, -19, 65538, 0, -18, 65538, 0
 
 [node name="Foreground" type="CanvasLayer" parent="."]
 layer = 2
-visible = false
 follow_viewport_enabled = true
 
 [node name="Water" parent="Foreground" instance=ExtResource("12_y2o7a")]
