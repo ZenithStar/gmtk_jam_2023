@@ -1,6 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://grgld4o65g87"]
+[gd_scene load_steps=7 format=3 uid="uid://ccw0qnfwedk08"]
 
 [ext_resource type="Texture2D" uid="uid://dk607jmus4p8n" path="res://assets/Figure_Parts.png" id="1_irly3"]
+[ext_resource type="Script" path="res://nodes/tire.gd" id="1_mn8ib"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_b6oe5"]
 atlas = ExtResource("1_irly3")
@@ -19,6 +20,7 @@ size = Vector2(156, 113)
 [node name="Tire" type="RigidBody2D"]
 mass = 30.0
 inertia = 30000.0
+script = ExtResource("1_mn8ib")
 
 [node name="Sprite2D2" type="Sprite2D" parent="."]
 z_index = -1
