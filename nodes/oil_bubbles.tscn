@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3 uid="uid://ckrc6nt46ov7w"]
+
+[ext_resource type="Shader" path="res://shaders/oil_bubbles.gdshader" id="1_pctxi"]
+[ext_resource type="Texture2D" uid="uid://bb4khnta5dh6g" path="res://icon.svg" id="2_edrde"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_d2gdd"]
+shader = ExtResource("1_pctxi")
+shader_parameter/speed = 0.5
+shader_parameter/background_color = Vector4(0, 0, 0, 1)
+shader_parameter/grid_vec = Vector2(2, 2)
+shader_parameter/grid_bubbles = Vector2(20, 10)
+
+[node name="OilBubbles" type="Sprite2D"]
+material = SubResource("ShaderMaterial_d2gdd")
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("2_edrde")

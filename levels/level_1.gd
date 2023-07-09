@@ -3,7 +3,7 @@ extends Node2D
 
 func _handle_victory():
 	print("VICTORY!")
-	# TODO: monique to write code here!
+	GlobalPlayerData.load_next_level()
 	pass
 
 
