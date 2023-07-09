@@ -1,14 +1,14 @@
-[gd_scene load_steps=14 format=3 uid="uid://vlnq7p5rh5t0"]
+[gd_scene load_steps=15 format=3 uid="uid://vlnq7p5rh5t0"]
 
+[ext_resource type="Script" path="res://scripts/level_2.gd" id="1_31pta"]
 [ext_resource type="PackedScene" uid="uid://b8v3g4exip626" path="res://nodes/pause_menu.tscn" id="1_fgr25"]
 [ext_resource type="PackedScene" uid="uid://d1bsjvvc22n4b" path="res://nodes/cloudy_skys.tscn" id="2_38ptp"]
 [ext_resource type="TileSet" uid="uid://cmcpnwdeph0tl" path="res://assets/Mossy Tileset/tileset.tres" id="3_ba3xs"]
 [ext_resource type="Texture2D" uid="uid://bt7234vxy7i0s" path="res://assets/Mossy Tileset/Mossy - Decorations&Hazards.png" id="4_ivgfp"]
 [ext_resource type="PackedScene" uid="uid://bnb7bqebb5t0q" path="res://nodes/fish.tscn" id="5_xnxy2"]
-[ext_resource type="PackedScene" uid="uid://bqm4k1621pbwk" path="res://nodes/cooler.tscn" id="8_t7f7k"]
-[ext_resource type="PackedScene" uid="uid://c5h56t000mwfd" path="res://nodes/fisher.tscn" id="9_yr0lo"]
+[ext_resource type="PackedScene" uid="uid://cya56trmcu1is" path="res://nodes/fisher_skeleton_v2.tscn" id="6_2jy0w"]
+[ext_resource type="PackedScene" path="res://nodes/cooler.tscn" id="8_t7f7k"]
 [ext_resource type="PackedScene" uid="uid://vll6dlotbs8b" path="res://nodes/oil_drum.tscn" id="10_axlan"]
-[ext_resource type="Script" path="res://scripts/string.gd" id="10_lf076"]
 [ext_resource type="PackedScene" uid="uid://b8y45m33fj3im" path="res://nodes/boat.tscn" id="11_msrwi"]
 [ext_resource type="PackedScene" uid="uid://ca6kdmd2nkoer" path="res://nodes/water.tscn" id="12_y2o7a"]
 [ext_resource type="Script" path="res://scripts/Buoyant.gd" id="14_xqhcx"]
@@ -17,7 +17,11 @@
 atlas = ExtResource("4_ivgfp")
 region = Rect2(233, 192, 1283, 706)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_l7xin"]
+size = Vector2(703, 25.25)
+
 [node name="Node2D" type="Node2D"]
+script = ExtResource("1_31pta")
 
 [node name="PauseOverlayAttachPoint" type="CanvasLayer" parent="."]
 layer = 100
@@ -56,27 +60,24 @@ metadata/_edit_group_ = true
 [node name="Camera2D2" type="Camera2D" parent="Fish"]
 zoom = Vector2(0.25, 0.25)
 
+[node name="FisherSkeletonV2" parent="." instance=ExtResource("6_2jy0w")]
+position = Vector2(2059, -715)
+animate_cigar = true
+
 [node name="Cooler" parent="." instance=ExtResource("8_t7f7k")]
-position = Vector2(2292, -539)
-
-[node name="Fisher" parent="." instance=ExtResource("9_yr0lo")]
-position = Vector2(2243, -693)
-
-[node name="String2D" type="Node2D" parent="Fisher"]
-position = Vector2(-436, -345)
-script = ExtResource("10_lf076")
-ropeLength = 100
-constrain = 5
-endPin = false
-endOffset = Vector2(0, 500)
-
-[node name="Line2D" type="Line2D" parent="Fisher/String2D"]
-points = PackedVector2Array(0, 3)
+position = Vector2(2275, -655)
 
 [node name="Boat" parent="." instance=ExtResource("11_msrwi")]
 z_index = 1
 position = Vector2(2067, -477)
 angular_damp = 50.0
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Boat"]
+position = Vector2(7, -62)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Boat/StaticBody2D"]
+position = Vector2(11.5, -7)
+shape = SubResource("RectangleShape2D_l7xin")
 
 [node name="Oil Drum" parent="." instance=ExtResource("10_axlan")]
 position = Vector2(4200, -1058)

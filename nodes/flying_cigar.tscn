@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://d3vuglshl78fq"]
+
+[ext_resource type="Texture2D" uid="uid://bimblbktr4v5s" path="res://assets/Cigs_and_Hook.png" id="1_sbrhy"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pouhs"]
+size = Vector2(116, 12)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e3u8h"]
+atlas = ExtResource("1_sbrhy")
+region = Rect2(4501, 3488, 1142, 116)
+
+[node name="FlyingCigar" type="RigidBody2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_pouhs")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.1, 0.1)
+texture = SubResource("AtlasTexture_e3u8h")

@@ -2,20 +2,20 @@
 
 [ext_resource type="Texture2D" uid="uid://bujrlbhbp82m7" path="res://assets/Animaton_Parts.png" id="1_7ouxg"]
 [ext_resource type="Script" path="res://nodes/fisher.gd" id="1_asnjg"]
-[ext_resource type="Script" path="res://scripts/FisherAnimator.gd" id="1_i8vpk"]
 [ext_resource type="Texture2D" uid="uid://dk607jmus4p8n" path="res://assets/Figure_Parts.png" id="2_5pyjf"]
+[ext_resource type="Texture2D" uid="uid://diaavweqiatsx" path="res://assets/Lit_Cig.png" id="4_xfqkt"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_y8n3q"]
 size = Vector2(274, 418)
 
 [node name="FisherSkeletonV2" type="RigidBody2D"]
 position = Vector2(1, 0)
+collision_mask = 255
 mass = 50.0
 script = ExtResource("1_asnjg")
 
 [node name="FisherContainer" type="Node2D" parent="."]
 scale = Vector2(0.65, 0.65)
-script = ExtResource("1_i8vpk")
 
 [node name="Skeleton2D" type="Skeleton2D" parent="FisherContainer"]
 
@@ -62,16 +62,32 @@ auto_calculate_length_and_angle = false
 length = 133.261
 bone_angle = -159.368
 
+[node name="cigar" type="Bone2D" parent="FisherContainer/Skeleton2D/torso/arm2"]
+position = Vector2(-139.385, -62.3846)
+rest = Transform2D(1, 0, 0, 1, -139.385, -62.3846)
+auto_calculate_length_and_angle = false
+length = 60.478
+bone_angle = 119.526
+
 [node name="skeletons" type="Node2D" parent="FisherContainer"]
 position = Vector2(-183, -25)
 
 [node name="arm2" type="Polygon2D" parent="FisherContainer/skeletons"]
-position = Vector2(-201, -899)
 texture = ExtResource("1_7ouxg")
 skeleton = NodePath("../../Skeleton2D")
-polygon = PackedVector2Array(303.704, 857.83, 287.037, 930.67, 185.802, 893.016, 158.642, 918.941, 60.4938, 874.497, 104.938, 773.262)
+polygon = PackedVector2Array(108.967, -31.6436, 92.3002, 41.1964, -8.93481, 3.54236, -36.0948, 29.4673, -134.243, -14.9766, -89.7988, -116.212)
 uv = PackedVector2Array(303.704, 857.83, 287.037, 930.67, 185.802, 893.016, 158.642, 918.941, 60.4938, 874.497, 104.938, 773.262)
 bones = ["torso", PackedFloat32Array(0, 0, 0, 0, 0, 0), "torso/leg", PackedFloat32Array(0, 0, 0, 0, 0, 0), "torso/head", PackedFloat32Array(0, 0, 0, 0, 0, 0), "torso/head/hat", PackedFloat32Array(0, 0, 0, 0, 0, 0), "torso/shoulder1", PackedFloat32Array(0, 0, 0, 0, 0, 0), "torso/shoulder1/arm1", PackedFloat32Array(0, 0, 0, 0, 0, 0), "torso/shoulder1/arm1/rod", PackedFloat32Array(0, 0, 0, 0, 0, 0), "torso/arm2", PackedFloat32Array(0.5, 0.5, 0.5, 0.5, 0.5, 0.5)]
+
+[node name="cigar" type="Polygon2D" parent="FisherContainer/skeletons"]
+position = Vector2(-92.3846, -196.538)
+rotation = -2.96357
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("4_xfqkt")
+skeleton = NodePath("../../Skeleton2D")
+polygon = PackedVector2Array(-835.547, -629.93, -505.686, -1909.43, -273.2, -1843.06, -551.083, -558.954)
+uv = PackedVector2Array(4448.28, 3386.21, 5768.97, 3427.59, 5755.17, 3668.97, 4441.38, 3679.31)
+bones = ["torso", PackedFloat32Array(0, 0, 0, 0), "torso/leg", PackedFloat32Array(0, 0, 0, 0), "torso/head", PackedFloat32Array(0, 0, 0, 0), "torso/head/hat", PackedFloat32Array(0, 0, 0, 0), "torso/shoulder1", PackedFloat32Array(0, 0, 0, 0), "torso/shoulder1/arm1", PackedFloat32Array(0, 0, 0, 0), "torso/shoulder1/arm1/rod", PackedFloat32Array(0, 0, 0, 0), "torso/arm2", PackedFloat32Array(0, 0, 0, 0), "torso/arm2/cigar", PackedFloat32Array(0.5, 0.5, 0.5, 0.5)]
 
 [node name="leg" type="Polygon2D" parent="FisherContainer/skeletons"]
 position = Vector2(-603.802, -934.449)
