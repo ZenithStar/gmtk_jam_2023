@@ -12,7 +12,7 @@
 [ext_resource type="AudioStream" uid="uid://ctgvel5t0k7wh" path="res://assets/Audio/Music/Level1.wav" id="9_agrv3"]
 [ext_resource type="Script" path="res://nodes/string.gd" id="9_eqb0x"]
 [ext_resource type="PackedScene" path="res://nodes/cooler.tscn" id="11_l8i2o"]
-[ext_resource type="PackedScene" path="res://nodes/fisher.tscn" id="12_22878"]
+[ext_resource type="PackedScene" uid="uid://c5h56t000mwfd" path="res://nodes/fisher.tscn" id="12_22878"]
 [ext_resource type="Texture2D" uid="uid://dm2rmaxd1vfqi" path="res://assets/fish.png" id="14_gw3x5"]
 [ext_resource type="Script" path="res://scripts/Buoyant.gd" id="14_ttc3b"]
 
