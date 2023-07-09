@@ -10,7 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://grgld4o65g87" path="res://nodes/tire.tscn" id="6_5axqf"]
 [ext_resource type="PackedScene" uid="uid://b8y45m33fj3im" path="res://nodes/boat.tscn" id="6_hab1a"]
 [ext_resource type="AudioStream" uid="uid://ctgvel5t0k7wh" path="res://assets/Audio/Music/Level1.wav" id="9_agrv3"]
-[ext_resource type="Script" path="res://nodes/string.gd" id="9_eqb0x"]
+[ext_resource type="Script" path="res://scripts/string.gd" id="10_37l0x"]
 [ext_resource type="PackedScene" uid="uid://bqm4k1621pbwk" path="res://nodes/cooler.tscn" id="11_l8i2o"]
 [ext_resource type="PackedScene" uid="uid://c5h56t000mwfd" path="res://nodes/fisher.tscn" id="12_22878"]
 [ext_resource type="Texture2D" uid="uid://dm2rmaxd1vfqi" path="res://assets/fish.png" id="14_gw3x5"]
@@ -75,7 +75,7 @@ position = Vector2(202, -699)
 
 [node name="FishingLine" type="Node2D" parent="Fisher"]
 position = Vector2(-437, -350)
-script = ExtResource("9_eqb0x")
+script = ExtResource("10_37l0x")
 ropeLength = 100
 endPin = false
 endOffset = Vector2(0, 1000)
