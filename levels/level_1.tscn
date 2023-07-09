@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://c7g6dik1pup38"]
+[gd_scene load_steps=19 format=3 uid="uid://c7g6dik1pup38"]
 
 [ext_resource type="PackedScene" uid="uid://b8v3g4exip626" path="res://nodes/pause_menu.tscn" id="1_bqhws"]
 [ext_resource type="Script" path="res://levels/level_1.gd" id="1_g4cdt"]
@@ -13,12 +13,17 @@
 [ext_resource type="PackedScene" uid="uid://ccw0qnfwedk08" path="res://nodes/tire.tscn" id="8_v3r64"]
 [ext_resource type="Script" path="res://scripts/Buoyant.gd" id="10_012p4"]
 [ext_resource type="Texture2D" uid="uid://dvyg8k6p4rwc7" path="res://assets/Fishing_Bobber.png" id="11_s3xhc"]
+[ext_resource type="Texture2D" uid="uid://bt7234vxy7i0s" path="res://assets/Mossy Tileset/Mossy - Decorations&Hazards.png" id="13_jht5y"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_1pfio"]
 friction = 0.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_h2fpv"]
 radius = 17.504
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lqm73"]
+atlas = ExtResource("13_jht5y")
+region = Rect2(2893, 9, 1053, 915)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ji8ca"]
 size = Vector2(2931, 202)
@@ -91,6 +96,25 @@ width = 3
 node_a = NodePath("../FisherSkeletonV2")
 node_b = NodePath("../FisherSkeletonV2/PinJoint2D/Bobber")
 
+[node name="Cooler" parent="." instance=ExtResource("7_0oqfp")]
+position = Vector2(4554, -566)
+
+[node name="Tire" parent="." instance=ExtResource("8_v3r64")]
+position = Vector2(3902, 853)
+mass = 40.0
+inertia = 20000.0
+linear_damp = 1.0
+angular_damp = 10.0
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2(4452, 676)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
+polygon = PackedVector2Array(-351, 441, -138, -245, -107, -306, 1, -443, 33, -458, 127, -362, 258, -181, 334, -14, 413, 282, 442, 443)
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D"]
+texture = SubResource("AtlasTexture_lqm73")
+
 [node name="Midground" type="TileMap" parent="."]
 z_index = 2
 tile_set = ExtResource("3_3ffhe")
@@ -105,16 +129,6 @@ follow_viewport_enabled = true
 [node name="Water" parent="Foreground" instance=ExtResource("8_8jwvt")]
 position = Vector2(0, 24606)
 linear_damp = 1.0
-
-[node name="Cooler" parent="." instance=ExtResource("7_0oqfp")]
-position = Vector2(4554, -566)
-
-[node name="Tire" parent="." instance=ExtResource("8_v3r64")]
-position = Vector2(3902, 853)
-mass = 40.0
-inertia = 20000.0
-linear_damp = 1.0
-angular_damp = 10.0
 
 [node name="Area2D" type="Area2D" parent="."]
 position = Vector2(1747, 2964)
