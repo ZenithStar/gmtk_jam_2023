@@ -6,7 +6,7 @@
 [ext_resource type="TileSet" uid="uid://cmcpnwdeph0tl" path="res://assets/Mossy Tileset/tileset.tres" id="3_3ffhe"]
 [ext_resource type="PackedScene" uid="uid://bnb7bqebb5t0q" path="res://nodes/fish.tscn" id="5_pvqjx"]
 [ext_resource type="PackedScene" uid="uid://bu44xb5n13kcr" path="res://nodes/dock.tscn" id="6_m8shv"]
-[ext_resource type="PackedScene" path="res://nodes/cooler.tscn" id="7_0oqfp"]
+[ext_resource type="PackedScene" uid="uid://bqm4k1621pbwk" path="res://nodes/cooler.tscn" id="7_0oqfp"]
 [ext_resource type="PackedScene" uid="uid://ca6kdmd2nkoer" path="res://nodes/water.tscn" id="8_8jwvt"]
 [ext_resource type="PackedScene" uid="uid://c5h56t000mwfd" path="res://nodes/fisher.tscn" id="8_irtay"]
 [ext_resource type="PackedScene" uid="uid://ccw0qnfwedk08" path="res://nodes/tire.tscn" id="8_v3r64"]

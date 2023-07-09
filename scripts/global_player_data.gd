@@ -2,6 +2,11 @@ extends Node
 
 var max_level_reached = -1;
 
+func load_next_level():
+	max_level_reached = max_level_reached + 1
+	save_values()
+	SceneTransition.change_scene(GlobalConstants.level_lookup[max_level_reached])
+
 
 func load_values():
 	var config = ConfigFile.new()
