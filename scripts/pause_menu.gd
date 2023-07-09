@@ -7,6 +7,7 @@ func _ready():
 	set_paused(paused)
 	get_node("PauseOverlay/ResumeGame").pressed.connect(self.resume_game)
 	get_node("PauseOverlay/ReturnToMainMenu").pressed.connect(self.return_to_main_menu)
+	get_node("PauseOverlay/Retry").pressed.connect(self.retry)
 	get_node("PauseOverlay/CurrentLevelLabel").text = get_node("PauseOverlay/CurrentLevelLabel").text.replace("%s", str(GlobalPlayerData.max_level_reached+1))
 	
 func _unhandled_input(event):
@@ -25,3 +26,6 @@ func resume_game():
 func return_to_main_menu():
 	scene_tree_ref.paused = false
 	SceneTransition.change_scene("res://levels/title_screen.tscn")
+
+func retry():
+	scene_tree_ref.reload_current_scene()

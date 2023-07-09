@@ -10,6 +10,7 @@ region = Rect2(85, 571, 212, 302)
 size = Vector2(195, 239.5)
 
 [node name="Oil Drum" type="RigidBody2D"]
+collision_mask = 255
 mass = 50.0
 inertia = 50000.0
 max_contacts_reported = 4

@@ -6,10 +6,10 @@
 [ext_resource type="TileSet" uid="uid://cmcpnwdeph0tl" path="res://assets/Mossy Tileset/tileset.tres" id="3_3ffhe"]
 [ext_resource type="PackedScene" uid="uid://bnb7bqebb5t0q" path="res://nodes/fish.tscn" id="5_pvqjx"]
 [ext_resource type="PackedScene" uid="uid://bu44xb5n13kcr" path="res://nodes/dock.tscn" id="6_m8shv"]
-[ext_resource type="PackedScene" path="res://nodes/cooler.tscn" id="7_0oqfp"]
+[ext_resource type="PackedScene" uid="uid://bqm4k1621pbwk" path="res://nodes/cooler.tscn" id="7_0oqfp"]
 [ext_resource type="Script" path="res://scripts/rigid_chain_refactor.gd" id="7_urpvr"]
 [ext_resource type="PackedScene" uid="uid://ca6kdmd2nkoer" path="res://nodes/water.tscn" id="8_8jwvt"]
-[ext_resource type="PackedScene" uid="uid://cya56trmcu1is" path="res://nodes/fisher_skeleton_v2.tscn" id="8_toey7"]
+[ext_resource type="PackedScene" path="res://nodes/fisher_skeleton_v2.tscn" id="8_toey7"]
 [ext_resource type="PackedScene" uid="uid://ccw0qnfwedk08" path="res://nodes/tire.tscn" id="8_v3r64"]
 [ext_resource type="Script" path="res://scripts/Buoyant.gd" id="10_012p4"]
 [ext_resource type="Texture2D" uid="uid://dvyg8k6p4rwc7" path="res://assets/Fishing_Bobber.png" id="11_s3xhc"]
@@ -69,10 +69,9 @@ position = Vector2(-578, -400)
 
 [node name="Bobber" type="RigidBody2D" parent="FisherSkeletonV2/PinJoint2D"]
 position = Vector2(-2560, 0)
-mass = 0.1
 physics_material_override = SubResource("PhysicsMaterial_1pfio")
 script = ExtResource("10_012p4")
-buoyant_factor = 1.1
+buoyant_factor = 1.3
 
 [node name="Fish2" type="Sprite2D" parent="FisherSkeletonV2/PinJoint2D/Bobber"]
 position = Vector2(0.299316, 14.301)
@@ -105,7 +104,7 @@ follow_viewport_enabled = true
 
 [node name="Water" parent="Foreground" instance=ExtResource("8_8jwvt")]
 position = Vector2(0, 24606)
-linear_damp = 0.0
+linear_damp = 1.0
 
 [node name="Cooler" parent="." instance=ExtResource("7_0oqfp")]
 position = Vector2(4554, -566)

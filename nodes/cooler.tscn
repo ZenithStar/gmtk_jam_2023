@@ -10,6 +10,7 @@ region = Rect2(1844, 1102, 225, 184)
 size = Vector2(223, 179)
 
 [node name="Cooler" type="RigidBody2D"]
+collision_mask = 255
 mass = 2.0
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
