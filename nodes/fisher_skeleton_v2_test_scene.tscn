@@ -8,6 +8,7 @@ size = Vector2(213, 20)
 [node name="FisherSkeletonV2TestScene" type="Node2D"]
 
 [node name="FisherSkeletonV2" parent="." instance=ExtResource("1_bjb4q")]
+animate_cigar = true
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 

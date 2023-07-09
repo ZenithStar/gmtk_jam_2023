@@ -10,6 +10,7 @@ b = Vector2(-32, 0)
 collision_layer = 16
 collision_mask = 8
 mass = 0.01
+inertia = 1.0
 physics_material_override = SubResource("PhysicsMaterial_gs7fj")
 linear_damp = 0.5
 angular_damp = 1.0

@@ -1,5 +1,6 @@
 .DS_Store
 builds/
+promotional/
 
 # Godot 4+ specific ignores
 .godot/

@@ -1,23 +1,125 @@
-[gd_scene load_steps=14 format=3 uid="uid://vlnq7p5rh5t0"]
+[gd_scene load_steps=39 format=3 uid="uid://vlnq7p5rh5t0"]
 
+[ext_resource type="Script" path="res://scripts/level_2.gd" id="1_31pta"]
 [ext_resource type="PackedScene" uid="uid://b8v3g4exip626" path="res://nodes/pause_menu.tscn" id="1_fgr25"]
 [ext_resource type="PackedScene" uid="uid://d1bsjvvc22n4b" path="res://nodes/cloudy_skys.tscn" id="2_38ptp"]
+[ext_resource type="PackedScene" uid="uid://d3vuglshl78fq" path="res://nodes/flying_cigar.tscn" id="2_uoo0b"]
 [ext_resource type="TileSet" uid="uid://cmcpnwdeph0tl" path="res://assets/Mossy Tileset/tileset.tres" id="3_ba3xs"]
 [ext_resource type="Texture2D" uid="uid://bt7234vxy7i0s" path="res://assets/Mossy Tileset/Mossy - Decorations&Hazards.png" id="4_ivgfp"]
 [ext_resource type="PackedScene" uid="uid://bnb7bqebb5t0q" path="res://nodes/fish.tscn" id="5_xnxy2"]
-[ext_resource type="PackedScene" uid="uid://bqm4k1621pbwk" path="res://nodes/cooler.tscn" id="8_t7f7k"]
-[ext_resource type="PackedScene" uid="uid://c5h56t000mwfd" path="res://nodes/fisher.tscn" id="9_yr0lo"]
+[ext_resource type="PackedScene" uid="uid://cya56trmcu1is" path="res://nodes/fisher_skeleton_v2.tscn" id="6_2jy0w"]
+[ext_resource type="PackedScene" path="res://nodes/cooler.tscn" id="8_t7f7k"]
 [ext_resource type="PackedScene" uid="uid://vll6dlotbs8b" path="res://nodes/oil_drum.tscn" id="10_axlan"]
-[ext_resource type="Script" path="res://scripts/string.gd" id="10_lf076"]
+[ext_resource type="Texture2D" uid="uid://ds5f2ddjcvkj8" path="res://assets/explosion/F12.png" id="10_yncsn"]
 [ext_resource type="PackedScene" uid="uid://b8y45m33fj3im" path="res://nodes/boat.tscn" id="11_msrwi"]
+[ext_resource type="Texture2D" uid="uid://dkf8dqogp1bne" path="res://assets/explosion/F13.png" id="11_p6fce"]
+[ext_resource type="Texture2D" uid="uid://meijbehdnpnh" path="res://assets/explosion/F14.png" id="12_be5c5"]
+[ext_resource type="Texture2D" uid="uid://b4crx3kuif2wk" path="res://assets/explosion/F22.png" id="12_dlmcl"]
 [ext_resource type="PackedScene" uid="uid://ca6kdmd2nkoer" path="res://nodes/water.tscn" id="12_y2o7a"]
+[ext_resource type="Texture2D" uid="uid://falbaeex2k3l" path="res://assets/explosion/F15.png" id="13_l3uqe"]
+[ext_resource type="Texture2D" uid="uid://d0cv2tx24vxx8" path="res://assets/explosion/F16.png" id="14_jc6qs"]
 [ext_resource type="Script" path="res://scripts/Buoyant.gd" id="14_xqhcx"]
+[ext_resource type="Texture2D" uid="uid://bb1ixt0m6k0ff" path="res://assets/explosion/F17.png" id="15_k25ni"]
+[ext_resource type="Texture2D" uid="uid://daw4p013l2xbn" path="res://assets/explosion/F18.png" id="16_r1nyv"]
+[ext_resource type="Texture2D" uid="uid://d6lrchdx4akc" path="res://assets/explosion/F19_.png" id="17_bey6y"]
+[ext_resource type="Texture2D" uid="uid://c7abxg6fa7y18" path="res://assets/explosion/F20.png" id="18_2mwta"]
+[ext_resource type="Texture2D" uid="uid://mayb6ba7hnho" path="res://assets/explosion/F21.png" id="19_lxetu"]
+[ext_resource type="Texture2D" uid="uid://be0wc5gbefmdx" path="res://assets/explosion/F23.png" id="21_6oa0y"]
+[ext_resource type="Texture2D" uid="uid://duv650p0wyyf8" path="res://assets/explosion/F24.png" id="22_023v8"]
+[ext_resource type="Texture2D" uid="uid://cd7o5bpe7ugnu" path="res://assets/explosion/F25.png" id="23_ggcrs"]
+[ext_resource type="Texture2D" uid="uid://bduktkypic70k" path="res://assets/explosion/F26.png" id="24_km5un"]
+[ext_resource type="Texture2D" uid="uid://x3siklx3yu2u" path="res://assets/explosion/F27.png" id="25_rl4me"]
+[ext_resource type="Texture2D" uid="uid://dw5r3464w2ak2" path="res://assets/explosion/F28.png" id="26_8y667"]
+[ext_resource type="Texture2D" uid="uid://dhmf02fsv2qga" path="res://assets/explosion/F29.png" id="27_2tmga"]
+[ext_resource type="Texture2D" uid="uid://p33hgpaa0knv" path="res://assets/explosion/F30.png" id="28_rpyc8"]
+[ext_resource type="Texture2D" uid="uid://c2pf1du6fvxvl" path="res://assets/explosion/F31.png" id="29_qagvt"]
+[ext_resource type="Texture2D" uid="uid://cy7ij2vt715yy" path="res://assets/explosion/F32.png" id="30_tg6rr"]
+[ext_resource type="Texture2D" uid="uid://cmdry260x1cmt" path="res://assets/explosion/F36.png" id="31_5ui2y"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_s1i3p"]
 atlas = ExtResource("4_ivgfp")
 region = Rect2(233, 192, 1283, 706)
 
+[sub_resource type="SpriteFrames" id="SpriteFrames_5mj3b"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("10_yncsn")
+}, {
+"duration": 0.05,
+"texture": ExtResource("11_p6fce")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_be5c5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_l3uqe")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_jc6qs")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_k25ni")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_r1nyv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_bey6y")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_2mwta")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_lxetu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_dlmcl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_6oa0y")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_023v8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_ggcrs")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_km5un")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_rl4me")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_8y667")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_2tmga")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28_rpyc8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("29_qagvt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("30_tg6rr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("31_5ui2y")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_l7xin"]
+size = Vector2(703, 25.25)
+
 [node name="Node2D" type="Node2D"]
+script = ExtResource("1_31pta")
+cigar_scene = ExtResource("2_uoo0b")
 
 [node name="PauseOverlayAttachPoint" type="CanvasLayer" parent="."]
 layer = 100
@@ -56,32 +158,35 @@ metadata/_edit_group_ = true
 [node name="Camera2D2" type="Camera2D" parent="Fish"]
 zoom = Vector2(0.25, 0.25)
 
+[node name="FisherSkeletonV2" parent="." instance=ExtResource("6_2jy0w")]
+position = Vector2(2059, -715)
+animate_cigar = true
+
 [node name="Cooler" parent="." instance=ExtResource("8_t7f7k")]
-position = Vector2(2292, -539)
+position = Vector2(2275, -655)
 
-[node name="Fisher" parent="." instance=ExtResource("9_yr0lo")]
-position = Vector2(2243, -693)
-
-[node name="String2D" type="Node2D" parent="Fisher"]
-position = Vector2(-436, -345)
-script = ExtResource("10_lf076")
-ropeLength = 100
-constrain = 5
-endPin = false
-endOffset = Vector2(0, 500)
-
-[node name="Line2D" type="Line2D" parent="Fisher/String2D"]
-points = PackedVector2Array(0, 3)
+[node name="Explosion" type="AnimatedSprite2D" parent="."]
+z_index = 200
+position = Vector2(2627, -458)
+sprite_frames = SubResource("SpriteFrames_5mj3b")
+frame_progress = 0.294638
 
 [node name="Boat" parent="." instance=ExtResource("11_msrwi")]
 z_index = 1
 position = Vector2(2067, -477)
 angular_damp = 50.0
 
+[node name="StaticBody2D" type="StaticBody2D" parent="Boat"]
+position = Vector2(7, -62)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Boat/StaticBody2D"]
+position = Vector2(11.5, -7)
+shape = SubResource("RectangleShape2D_l7xin")
+
 [node name="Oil Drum" parent="." instance=ExtResource("10_axlan")]
 position = Vector2(4200, -1058)
 script = ExtResource("14_xqhcx")
-buoyant_factor = 1.0
+buoyant_factor = 1.05
 
 [node name="Oil Drum2" parent="." instance=ExtResource("10_axlan")]
 position = Vector2(3841, 985)
@@ -117,3 +222,19 @@ follow_viewport_enabled = true
 [node name="Water" parent="Foreground" instance=ExtResource("12_y2o7a")]
 position = Vector2(0, 24606)
 linear_damp = 1.0
+
+[node name="SpawnCigarTimer" type="Timer" parent="."]
+wait_time = 6.2
+
+[node name="VictoryTimer" type="Timer" parent="."]
+wait_time = 3.0
+one_shot = true
+
+[node name="StartCigars" type="Timer" parent="."]
+wait_time = 4.4
+one_shot = true
+
+[connection signal="body_entered" from="Oil Drum" to="." method="on_barrel_collide"]
+[connection signal="timeout" from="SpawnCigarTimer" to="." method="on_spawn_cigar_timer"]
+[connection signal="timeout" from="VictoryTimer" to="." method="on_victory_timer_expire"]
+[connection signal="timeout" from="StartCigars" to="." method="on_start_cigars"]
