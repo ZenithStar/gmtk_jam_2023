@@ -1,0 +1,114 @@
+[gd_scene load_steps=4 format=3 uid="uid://cya56trmcu1is"]
+
+[ext_resource type="Texture2D" uid="uid://bujrlbhbp82m7" path="res://assets/Animaton_Parts.png" id="1_7ouxg"]
+[ext_resource type="Texture2D" uid="uid://dk607jmus4p8n" path="res://assets/Figure_Parts.png" id="2_5pyjf"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_y8n3q"]
+size = Vector2(166, 418)
+
+[node name="FisherSkeletonV2" type="RigidBody2D"]
+mass = 50.0
+
+[node name="Node2D" type="Node2D" parent="."]
+scale = Vector2(0.65, 0.65)
+
+[node name="Skeleton2D" type="Skeleton2D" parent="Node2D"]
+
+[node name="torso" type="Bone2D" parent="Node2D/Skeleton2D"]
+rest = Transform2D(1, 0, 0, 1, 0, 0)
+
+[node name="leg" type="Bone2D" parent="Node2D/Skeleton2D/torso"]
+position = Vector2(14, 144)
+rest = Transform2D(1, 0, 0, 1, 14, 144)
+auto_calculate_length_and_angle = false
+length = 193.913
+bone_angle = -182.134
+
+[node name="head" type="Bone2D" parent="Node2D/Skeleton2D/torso"]
+position = Vector2(-39, -263)
+rest = Transform2D(1, 0, 0, 1, -39, -263)
+
+[node name="hat" type="Bone2D" parent="Node2D/Skeleton2D/torso/head"]
+position = Vector2(11, -176)
+rest = Transform2D(1, 0, 0, 1, 11, -176)
+auto_calculate_length_and_angle = false
+length = 101.443
+bone_angle = 0.0
+
+[node name="shoulder1" type="Bone2D" parent="Node2D/Skeleton2D/torso"]
+position = Vector2(24, -140)
+rest = Transform2D(1, 0, 0, 1, 24, -140)
+
+[node name="arm1" type="Bone2D" parent="Node2D/Skeleton2D/torso/shoulder1"]
+position = Vector2(-207, 161)
+rest = Transform2D(1, 0, 0, 1, -207, 161)
+
+[node name="rod" type="Bone2D" parent="Node2D/Skeleton2D/torso/shoulder1/arm1"]
+position = Vector2(-27, -46)
+rest = Transform2D(1, 0, 0, 1, -27, -46)
+auto_calculate_length_and_angle = false
+length = 812.565
+bone_angle = 224.502
+
+[node name="arm2" type="Bone2D" parent="Node2D/Skeleton2D/torso"]
+position = Vector2(-96, -33)
+rest = Transform2D(1, 0, 0, 1, -96, -33)
+auto_calculate_length_and_angle = false
+length = 133.261
+bone_angle = -159.368
+
+[node name="skeletons" type="Node2D" parent="Node2D"]
+position = Vector2(-183, -25)
+
+[node name="arm2" type="Polygon2D" parent="Node2D/skeletons"]
+position = Vector2(-201, -899)
+texture = ExtResource("1_7ouxg")
+skeleton = NodePath("../../Skeleton2D")
+polygon = PackedVector2Array(303.704, 857.83, 287.037, 930.67, 185.802, 893.016, 158.642, 918.941, 60.4938, 874.497, 104.938, 773.262)
+uv = PackedVector2Array(303.704, 857.83, 287.037, 930.67, 185.802, 893.016, 158.642, 918.941, 60.4938, 874.497, 104.938, 773.262)
+bones = ["torso", PackedFloat32Array(0, 0, 0, 0, 0, 0), "torso/leg", PackedFloat32Array(0, 0, 0, 0, 0, 0), "torso/head", PackedFloat32Array(0, 0, 0, 0, 0, 0), "torso/head/hat", PackedFloat32Array(0, 0, 0, 0, 0, 0), "torso/shoulder1", PackedFloat32Array(0, 0, 0, 0, 0, 0), "torso/shoulder1/arm1", PackedFloat32Array(0, 0, 0, 0, 0, 0), "torso/shoulder1/arm1/rod", PackedFloat32Array(0, 0, 0, 0, 0, 0), "torso/arm2", PackedFloat32Array(0.5, 0.5, 0.5, 0.5, 0.5, 0.5)]
+
+[node name="rod" type="Polygon2D" parent="Node2D/skeletons"]
+position = Vector2(-780, -2071)
+scale = Vector2(1.75, 1.75)
+texture = ExtResource("2_5pyjf")
+skeleton = NodePath("../../Skeleton2D")
+polygon = PackedVector2Array(42.5373, 853.496, 262.687, 960.213, 470.149, 1178.12, 489.552, 1256.48, 457.463, 1260.96, 251.492, 1049.76, 33.5821, 882.601)
+uv = PackedVector2Array(42.5373, 853.496, 262.687, 960.213, 470.149, 1178.12, 489.552, 1256.48, 457.463, 1260.96, 251.492, 1049.76, 33.5821, 882.601)
+bones = ["torso", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0), "torso/leg", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0), "torso/head", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0), "torso/head/hat", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0), "torso/shoulder1", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0), "torso/shoulder1/arm1", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0), "torso/shoulder1/arm1/rod", PackedFloat32Array(0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5), "torso/arm2", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0)]
+
+[node name="leg" type="Polygon2D" parent="Node2D/skeletons"]
+position = Vector2(-603.802, -934.449)
+texture = ExtResource("1_7ouxg")
+skeleton = NodePath("../../Skeleton2D")
+polygon = PackedVector2Array(890.124, 1018.94, 502.469, 992.398, 472.222, 1139.93, 520.988, 1221.41, 429.012, 1202.27, 385.802, 1292.4, 469.136, 1391.16, 656.173, 1382.52, 680.864, 1181.9, 822.222, 1221.41, 909.877, 1152.27)
+uv = PackedVector2Array(890.124, 1018.94, 502.469, 992.398, 472.222, 1139.93, 520.988, 1221.41, 429.012, 1202.27, 385.802, 1292.4, 469.136, 1391.16, 656.173, 1382.52, 680.864, 1181.9, 822.222, 1221.41, 909.877, 1152.27)
+bones = ["torso", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "torso/leg", PackedFloat32Array(0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5)]
+
+[node name="torso" type="Polygon2D" parent="Node2D/skeletons"]
+position = Vector2(-507.802, -1055.45)
+texture = ExtResource("1_7ouxg")
+skeleton = NodePath("../../Skeleton2D")
+polygon = PackedVector2Array(540.306, 744.653, 558.673, 650.775, 640.816, 609.449, 759.184, 644.653, 788.265, 753.837, 739.796, 832.408, 827.551, 1140.57, 733.673, 1215.06, 557.653, 1214.04, 584.184, 889.551, 494.388, 854.347, 505.102, 751.286)
+uv = PackedVector2Array(1048.98, 909.449, 1067.35, 815.571, 1149.49, 774.245, 1267.86, 809.449, 1296.94, 918.633, 1248.47, 997.204, 1336.22, 1305.37, 1242.35, 1379.86, 1066.33, 1378.84, 1092.86, 1054.35, 1003.06, 1019.14, 1013.78, 916.082)
+bones = ["torso", PackedFloat32Array(0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5), "torso/leg", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)]
+
+[node name="hat" type="Polygon2D" parent="Node2D/skeletons"]
+position = Vector2(-889, -961)
+texture = ExtResource("1_7ouxg")
+skeleton = NodePath("../../Skeleton2D")
+polygon = PackedVector2Array(904.938, 464.62, 1049.38, 444.25, 1179.01, 474.497, 1208.64, 575.114, 1291.98, 676.966, 1111.73, 698.571, 1020.99, 655.978, 896.914, 672.028, 758.025, 602.892, 872.84, 549.806)
+uv = PackedVector2Array(904.938, 464.62, 1049.38, 444.25, 1179.01, 474.497, 1208.64, 575.114, 1291.98, 676.966, 1111.73, 698.571, 1020.99, 655.978, 896.914, 672.028, 758.025, 602.892, 872.84, 549.806)
+bones = ["torso", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "torso/leg", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "torso/head", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "torso/head/hat", PackedFloat32Array(0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5), "torso/shoulder1", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "torso/shoulder1/arm1", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "torso/shoulder1/arm1/rod", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "torso/arm2", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0)]
+
+[node name="arm1" type="Polygon2D" parent="Node2D/skeletons"]
+position = Vector2(-73, -1272)
+texture = ExtResource("1_7ouxg")
+skeleton = NodePath("../../Skeleton2D")
+polygon = PackedVector2Array(287.654, 1104.13, 229.63, 1116.47, 185.185, 1254.13, 114.198, 1282.52, 74.0741, 1258.45, 47.5309, 1273.26, 9.25925, 1323.26, 58.642, 1370.79, 106.173, 1368.32, 116.049, 1357.21, 324.691, 1304.13, 347.531, 1157.83)
+uv = PackedVector2Array(287.654, 1104.13, 229.63, 1116.47, 185.185, 1254.13, 114.198, 1282.52, 74.0741, 1258.45, 47.5309, 1273.26, 9.25925, 1323.26, 58.642, 1370.79, 106.173, 1368.32, 116.049, 1357.21, 324.691, 1304.13, 347.531, 1157.83)
+bones = ["torso", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "torso/leg", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "torso/head", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "torso/head/hat", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "torso/shoulder1", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "torso/shoulder1/arm1", PackedFloat32Array(0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5), "torso/shoulder1/arm1/rod", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "torso/arm2", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-15, -62)
+shape = SubResource("RectangleShape2D_y8n3q")

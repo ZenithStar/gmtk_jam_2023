@@ -4,12 +4,11 @@
 [ext_resource type="Texture2D" uid="uid://iwqjbhhl0qfd" path="res://assets/Fisher.png" id="2_4p1au"]
 
 [node name="FisherSkeleton" type="RigidBody2D"]
-metadata/_edit_group_ = true
 
 [node name="polygons" type="Node" parent="."]
 
 [node name="arm2" type="Polygon2D" parent="polygons"]
-position = Vector2(843, -416)
+position = Vector2(843, -420)
 texture = ExtResource("1_so2ne")
 skeleton = NodePath("../../Skeleton2D")
 polygon = PackedVector2Array(294.737, 857.895, 130.263, 786.842, 60.5263, 817.105, 80.2632, 877.632, 164.474, 915.789, 190.789, 896.053, 292.105, 928.947)
@@ -63,7 +62,7 @@ bones = ["torso", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "torso/hip",
 [node name="Skeleton2D" type="Skeleton2D" parent="."]
 
 [node name="torso" type="Bone2D" parent="Skeleton2D"]
-position = Vector2(1201, 403)
+position = Vector2(0, 3.05176e-05)
 rotation = -0.0512384
 rest = Transform2D(1, 0, 0, 1, 1201, 403)
 
@@ -118,5 +117,5 @@ position = Vector2(15, -159)
 rest = Transform2D(1, 0, 0, 1, 15, -159)
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
-position = Vector2(1108, 459)
+position = Vector2(-88, 57)
 polygon = PackedVector2Array(256, 79, 187, 267, 24, 269, 26, 365, 30, 491, -192, 494, -202, 387, -131, 356, -201, 210, -103, 124, -11, 115, -4, -135, -78, -215, -54, -313, 30, -390, 170, -335, 156, -196)
