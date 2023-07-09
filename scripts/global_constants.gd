@@ -3,6 +3,8 @@ extends Node
 var level_lookup = [
 	"res://levels/test_level.tscn",
 	"res://levels/angela_level.tscn",
+	"res://levels/level_1.tscn",
+	"res://levels/level_2.tscn",
 	"test",
 	"test",
 	"test",
@@ -15,6 +17,7 @@ var level_lookup = [
 	"test",
 	"test",
 	"test",
+	"res://levels/credits.tscn"
 ]
 
 # Called when the node enters the scene tree for the first time.

@@ -40,6 +40,7 @@ _data = {
 }
 
 [node name="scene_transition" type="CanvasLayer"]
+layer = 5
 script = ExtResource("1_jiap4")
 
 [node name="dissolve_rect" type="ColorRect" parent="."]

@@ -1,10 +1,11 @@
-[gd_scene load_steps=8 format=3 uid="uid://bnb7bqebb5t0q"]
+[gd_scene load_steps=9 format=3 uid="uid://bnb7bqebb5t0q"]
 
 [ext_resource type="Script" path="res://scripts/fish.gd" id="1_y27f2"]
 [ext_resource type="Texture2D" uid="uid://dm2rmaxd1vfqi" path="res://assets/fish.png" id="2_bfeh0"]
 [ext_resource type="AudioStream" uid="uid://mn1yl523a8wr" path="res://assets/Audio/Sounds/water_move1.mp3" id="3_gpiq7"]
 [ext_resource type="AudioStream" uid="uid://ba5yt71ngvorx" path="res://assets/Audio/Sounds/water_move2.wav" id="4_x1lkk"]
 [ext_resource type="AudioStream" uid="uid://cajgswwwqt2jo" path="res://assets/Audio/Sounds/water_move3.wav" id="5_nlg44"]
+[ext_resource type="AudioStream" uid="uid://bdtvnjeeigmh0" path="res://assets/Audio/Sounds/water_splash.mp3" id="6_qwx3d"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_wfe5g"]
 friction = 0.0
@@ -41,3 +42,7 @@ pitch_scale = 0.64
 stream = ExtResource("5_nlg44")
 volume_db = -7.495
 pitch_scale = 0.64
+
+[node name="splash" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_qwx3d")
+volume_db = -22.487
