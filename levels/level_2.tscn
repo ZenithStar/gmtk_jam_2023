@@ -8,7 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://bqm4k1621pbwk" path="res://nodes/cooler.tscn" id="8_t7f7k"]
 [ext_resource type="PackedScene" uid="uid://c5h56t000mwfd" path="res://nodes/fisher.tscn" id="9_yr0lo"]
 [ext_resource type="PackedScene" uid="uid://vll6dlotbs8b" path="res://nodes/oil_drum.tscn" id="10_axlan"]
-[ext_resource type="Script" path="res://nodes/string.gd" id="10_lf076"]
+[ext_resource type="Script" path="res://scripts/string.gd" id="10_lf076"]
 [ext_resource type="PackedScene" uid="uid://b8y45m33fj3im" path="res://nodes/boat.tscn" id="11_msrwi"]
 [ext_resource type="PackedScene" uid="uid://ca6kdmd2nkoer" path="res://nodes/water.tscn" id="12_y2o7a"]
 [ext_resource type="Script" path="res://scripts/Buoyant.gd" id="14_xqhcx"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://dq34o6bnybbm2"]
+[gd_scene load_steps=19 format=3 uid="uid://dq34o6bnybbm2"]
 
 [ext_resource type="PackedScene" uid="uid://d1bsjvvc22n4b" path="res://nodes/cloudy_skys.tscn" id="1_1nk6b"]
 [ext_resource type="PackedScene" uid="uid://b8v3g4exip626" path="res://nodes/pause_menu.tscn" id="1_2w428"]
@@ -10,18 +10,22 @@
 [ext_resource type="PackedScene" uid="uid://ccw0qnfwedk08" path="res://nodes/tire.tscn" id="6_5axqf"]
 [ext_resource type="PackedScene" uid="uid://b8y45m33fj3im" path="res://nodes/boat.tscn" id="6_hab1a"]
 [ext_resource type="AudioStream" uid="uid://ctgvel5t0k7wh" path="res://assets/Audio/Music/Level1.wav" id="9_agrv3"]
-[ext_resource type="Script" path="res://nodes/string.gd" id="9_eqb0x"]
-[ext_resource type="PackedScene" path="res://nodes/cooler.tscn" id="11_l8i2o"]
-[ext_resource type="Texture2D" uid="uid://dm2rmaxd1vfqi" path="res://assets/fish.png" id="14_gw3x5"]
+[ext_resource type="PackedScene" uid="uid://bqm4k1621pbwk" path="res://nodes/cooler.tscn" id="11_l8i2o"]
+[ext_resource type="Script" path="res://scripts/rigid_chain_refactor.gd" id="12_y5yan"]
+[ext_resource type="Texture2D" uid="uid://dvyg8k6p4rwc7" path="res://assets/Fishing_Bobber.png" id="14_cb6n3"]
 [ext_resource type="Script" path="res://scripts/Buoyant.gd" id="14_ttc3b"]
-[ext_resource type="PackedScene" uid="uid://cya56trmcu1is" path="res://nodes/fisher_skeleton_v2.tscn" id="16_cg44r"]
+[ext_resource type="PackedScene" path="res://nodes/fisher_skeleton_v2.tscn" id="16_cg44r"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_s1i3p"]
 atlas = ExtResource("3_uf7be")
 region = Rect2(233, 192, 1283, 706)
 
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_fdfpi"]
+friction = 0.0
+
 [sub_resource type="CircleShape2D" id="CircleShape2D_40lka"]
-radius = 5.0
+radius = 17.504
+
 
 [node name="Node2D" type="Node2D"]
 
@@ -56,7 +60,7 @@ texture = SubResource("AtlasTexture_s1i3p")
 
 [node name="Fish" parent="." instance=ExtResource("5_rl2t6")]
 z_index = 1
-position = Vector2(957, 256)
+position = Vector2(-2955, -84)
 
 [node name="Camera2D2" type="Camera2D" parent="Fish"]
 zoom = Vector2(0.25, 0.25)
@@ -108,29 +112,33 @@ stream = ExtResource("9_agrv3")
 volume_db = -23.424
 autoplay = true
 
+[node name="RigidChainLineOmega" type="Node2D" parent="."]
+position = Vector2(194, -779)
+script = ExtResource("12_y5yan")
+num_chain_segments = 100
+segment_length = 32
+width = 3
+node_a = NodePath("../FisherSkeletonV2")
+node_b = NodePath("../FisherSkeletonV2/PinJoint2D/Bobber")
+
 [node name="FisherSkeletonV2" parent="." instance=ExtResource("16_cg44r")]
 position = Vector2(194, -779)
 metadata/_edit_group_ = true
 
-[node name="FishingLine" type="Node2D" parent="FisherSkeletonV2"]
-position = Vector2(-552, -366)
-scale = Vector2(1.53846, 1.53846)
-script = ExtResource("9_eqb0x")
-ropeLength = 100
-endPin = false
-endOffset = Vector2(0, 1000)
+[node name="PinJoint2D" type="PinJoint2D" parent="FisherSkeletonV2"]
+position = Vector2(-578, -400)
 
-[node name="Line2D" type="Line2D" parent="FisherSkeletonV2/FishingLine"]
-points = PackedVector2Array(0, 3)
-
-[node name="Bobber" type="RigidBody2D" parent="FisherSkeletonV2/FishingLine"]
-position = Vector2(-532, 1157)
+[node name="Bobber" type="RigidBody2D" parent="FisherSkeletonV2/PinJoint2D"]
+position = Vector2(-3200, 0)
+mass = 0.1
+physics_material_override = SubResource("PhysicsMaterial_fdfpi")
 script = ExtResource("14_ttc3b")
-buoyant_factor = 1.0
+buoyant_factor = 1.1
 
-[node name="Fish2" type="Sprite2D" parent="FisherSkeletonV2/FishingLine/Bobber"]
+[node name="Fish2" type="Sprite2D" parent="FisherSkeletonV2/PinJoint2D/Bobber"]
+position = Vector2(0.299316, 14.301)
 scale = Vector2(0.1, 0.1)
-texture = ExtResource("14_gw3x5")
+texture = ExtResource("14_cb6n3")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="FisherSkeletonV2/FishingLine/Bobber"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="FisherSkeletonV2/PinJoint2D/Bobber"]
 shape = SubResource("CircleShape2D_40lka")
