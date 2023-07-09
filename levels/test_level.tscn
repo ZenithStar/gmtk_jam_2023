@@ -110,7 +110,6 @@ autoplay = true
 
 [node name="FisherSkeletonV2" parent="." instance=ExtResource("16_cg44r")]
 position = Vector2(194, -779)
-mass = 50.0
 metadata/_edit_group_ = true
 
 [node name="FishingLine" type="Node2D" parent="FisherSkeletonV2"]

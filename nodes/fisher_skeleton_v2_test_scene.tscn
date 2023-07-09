@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://dc32oun2wqg1l"]
+
+[ext_resource type="PackedScene" uid="uid://cya56trmcu1is" path="res://nodes/fisher_skeleton_v2.tscn" id="1_bjb4q"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_14etm"]
+size = Vector2(213, 20)
+
+[node name="FisherSkeletonV2TestScene" type="Node2D"]
+
+[node name="FisherSkeletonV2" parent="." instance=ExtResource("1_bjb4q")]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(-12.5, 166)
+shape = SubResource("RectangleShape2D_14etm")
+
+[node name="Camera2D" type="Camera2D" parent="."]
