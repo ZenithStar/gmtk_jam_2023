@@ -13,6 +13,7 @@ var THROW_TIME = .2
 
 
 func _process(_delta):
+	"""
 	var current = Time.get_unix_time_from_system()
 	var delta = current - start
 	if delta < do_nothing_time:
@@ -31,3 +32,4 @@ func _process(_delta):
 		shoulder.rotation = start_angle
 		start = Time.get_unix_time_from_system()
 		do_nothing_time = 2 + randi() % 5
+	"""
