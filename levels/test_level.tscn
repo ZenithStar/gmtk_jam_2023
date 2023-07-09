@@ -10,11 +10,11 @@
 [ext_resource type="PackedScene" uid="uid://ccw0qnfwedk08" path="res://nodes/tire.tscn" id="6_5axqf"]
 [ext_resource type="PackedScene" uid="uid://b8y45m33fj3im" path="res://nodes/boat.tscn" id="6_hab1a"]
 [ext_resource type="AudioStream" uid="uid://ctgvel5t0k7wh" path="res://assets/Audio/Music/Level1.wav" id="9_agrv3"]
-[ext_resource type="PackedScene" path="res://nodes/cooler.tscn" id="11_l8i2o"]
+[ext_resource type="PackedScene" uid="uid://bqm4k1621pbwk" path="res://nodes/cooler.tscn" id="11_l8i2o"]
 [ext_resource type="Script" path="res://scripts/rigid_chain_refactor.gd" id="12_y5yan"]
 [ext_resource type="Texture2D" uid="uid://dvyg8k6p4rwc7" path="res://assets/Fishing_Bobber.png" id="14_cb6n3"]
 [ext_resource type="Script" path="res://scripts/Buoyant.gd" id="14_ttc3b"]
-[ext_resource type="PackedScene" uid="uid://cya56trmcu1is" path="res://nodes/fisher_skeleton_v2.tscn" id="16_cg44r"]
+[ext_resource type="PackedScene" path="res://nodes/fisher_skeleton_v2.tscn" id="16_cg44r"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_s1i3p"]
 atlas = ExtResource("3_uf7be")
