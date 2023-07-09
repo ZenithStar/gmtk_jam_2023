@@ -7,8 +7,27 @@ var GRAVITY = ProjectSettings.get_setting("physics/2d/default_gravity") * Projec
 @export var MAX_THRUST = 5000
 @export var THRUST_COMMAND: Vector2 = Vector2(1,.4)
 @export var MAX_VELOCITY = 1000
+@export var grab_stiffness_override = 1000
 
-
+var grabbers: Array = []
+var GRABBER_CLASS : PackedScene = preload("res://nodes/grab_joint.tscn")
+func _process(delta):
+	if Input.is_action_just_pressed("interact"):
+		for body in $InteractArea.get_overlapping_bodies():
+			if  not (body is Fish) and (body is PhysicsBody2D):
+				var grabber = GRABBER_CLASS.instantiate()
+				$GrabOrigin.add_child(grabber)
+				grabber.stiffness = grab_stiffness_override
+				grabber.node_a = get_path()
+				grabber.node_b = body.get_path()
+				grabbers.append(grabber)
+				print( "grabbing ", body)
+				break
+	elif Input.is_action_just_released("interact"):
+		for grabber in grabbers:
+			grabber.queue_free()
+		grabbers = []
+		
 func maybe_play_swim_sounds(is_in_water):
 	var swimSounds = false
 	var someSound = 0;
