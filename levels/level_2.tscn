@@ -183,7 +183,7 @@ position = Vector2(7, -62)
 position = Vector2(11.5, -7)
 shape = SubResource("RectangleShape2D_l7xin")
 
-[node name="Oil Drum" parent="." instance=ExtResource("10_axlan")]
+[node name="OilDrum" parent="." instance=ExtResource("10_axlan")]
 position = Vector2(4200, -1058)
 script = ExtResource("14_xqhcx")
 buoyant_factor = 1.05
@@ -234,7 +234,7 @@ one_shot = true
 wait_time = 4.4
 one_shot = true
 
-[connection signal="body_entered" from="Oil Drum" to="." method="on_barrel_collide"]
+[connection signal="body_entered" from="OilDrum" to="." method="on_barrel_collide"]
 [connection signal="timeout" from="SpawnCigarTimer" to="." method="on_spawn_cigar_timer"]
 [connection signal="timeout" from="VictoryTimer" to="." method="on_victory_timer_expire"]
 [connection signal="timeout" from="StartCigars" to="." method="on_start_cigars"]

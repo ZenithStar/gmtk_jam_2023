@@ -17,7 +17,9 @@ func _ready():
 func on_barrel_collide(body):
 	if body is Cigar:
 		$VictoryTimer.start()
+		$Explosion.position = $OilDrum.position
 		$Explosion.visible = true
+		$OilDrum.visible = false
 		$Explosion.play()
 		$Boat.apply_impulse(Vector2(-200000, 200000))
 
