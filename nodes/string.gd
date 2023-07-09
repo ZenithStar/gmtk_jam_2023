@@ -17,10 +17,7 @@ var posPrev: PackedVector2Array
 var pointCount: int
 
 func _ready()->void:
-	print("_ready()")
 	pointCount = get_pointCount(ropeLength)
-	print("Rigid:", bobber)
-	print("line2D:", line2D)
 	resize_arrays()
 	init_position()
 
@@ -54,7 +51,6 @@ func _process(delta)->void: #delta is typically 0.016...
 	update_points(delta)
 	update_constrain()
 	if (bobber != null):
-		print("bobber set", bobber.transform.origin)
 		set_last(bobber.transform.origin)
 	
 	#update_constrain()	#Repeat to get tighter rope

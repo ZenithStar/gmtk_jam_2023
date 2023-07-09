@@ -1,4 +1,4 @@
-[gd_scene load_steps=3 format=3 uid="uid://y5vk6ms55twk"]
+[gd_scene load_steps=3 format=3 uid="uid://c5h56t000mwfd"]
 
 [ext_resource type="Texture2D" uid="uid://dk607jmus4p8n" path="res://assets/Figure_Parts.png" id="1_kqfro"]
 
@@ -7,7 +7,7 @@ atlas = ExtResource("1_kqfro")
 region = Rect2(77, 74, 595, 573)
 
 [node name="Fisher" type="RigidBody2D"]
-mass = 80.0
+mass = 100.0
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(-145, -99)
