@@ -81,7 +81,7 @@ angular_damp = 50.0
 [node name="Oil Drum" parent="." instance=ExtResource("10_axlan")]
 position = Vector2(4200, -1058)
 script = ExtResource("14_xqhcx")
-buoyant_factor = 1.1
+buoyant_factor = 1.0
 
 [node name="Oil Drum2" parent="." instance=ExtResource("10_axlan")]
 position = Vector2(3841, 985)
