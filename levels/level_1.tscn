@@ -64,10 +64,14 @@ zoom = Vector2(0.25, 0.25)
 
 [node name="Dock" parent="." instance=ExtResource("6_m8shv")]
 position = Vector2(5410, -406)
+collision_layer = 2
+collision_mask = 2
 
 [node name="FisherSkeletonV2" parent="." instance=ExtResource("8_toey7")]
 position = Vector2(4228, -620)
-mass = 30.0
+collision_layer = 3
+collision_mask = 3
+mass = 10.0
 
 [node name="PinJoint2D" type="PinJoint2D" parent="FisherSkeletonV2"]
 position = Vector2(-578, -400)
@@ -100,14 +104,14 @@ node_b = NodePath("../FisherSkeletonV2/PinJoint2D/Bobber")
 position = Vector2(4554, -566)
 
 [node name="Tire" parent="." instance=ExtResource("8_v3r64")]
-position = Vector2(3902, 853)
-mass = 40.0
+position = Vector2(3919, 845)
+mass = 50.0
 inertia = 20000.0
 linear_damp = 1.0
 angular_damp = 10.0
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
-position = Vector2(4452, 676)
+position = Vector2(5499, 667)
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
 polygon = PackedVector2Array(-351, 441, -138, -245, -107, -306, 1, -443, 33, -458, 127, -362, 258, -181, 334, -14, 413, 282, 442, 443)
