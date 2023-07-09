@@ -1,17 +1,26 @@
-[gd_scene load_steps=18 format=3 uid="uid://ccvnybhtbkycl"]
+[gd_scene load_steps=23 format=3 uid="uid://ccvnybhtbkycl"]
 
 [ext_resource type="FontFile" uid="uid://do032k03kny33" path="res://assets/Fonts/mursgothic-widedark.otf" id="1_cl05j"]
 [ext_resource type="Script" path="res://scripts/victory.gd" id="1_jj253"]
 [ext_resource type="Texture2D" uid="uid://dk607jmus4p8n" path="res://assets/Figure_Parts.png" id="3_ai33v"]
 [ext_resource type="Texture2D" uid="uid://ce3g6mejcvw48" path="res://assets/Trash_Sprites_2.png" id="4_5u7kg"]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_ssq5l"]
-atlas = ExtResource("3_ai33v")
-region = Rect2(34.8331, 57.1669, 721.026, 637.231)
+[ext_resource type="Texture2D" uid="uid://cnwh2y343bi2d" path="res://assets/Shark.png" id="5_ww5r0"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_b4ck2"]
 atlas = ExtResource("4_5u7kg")
 region = Rect2(71.6001, 564.3, 231, 321.2)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wvve6"]
+atlas = ExtResource("3_ai33v")
+region = Rect2(1808.09, 1089.18, 289.091, 215.455)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y2fvy"]
+atlas = ExtResource("5_ww5r0")
+region = Rect2(4183.18, 1979.23, 3714.6, 5068.06)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ssq5l"]
+atlas = ExtResource("3_ai33v")
+region = Rect2(34.8331, 57.1669, 721.026, 637.231)
 
 [sub_resource type="Animation" id="Animation_fty1r"]
 length = 0.001
@@ -188,10 +197,6 @@ _data = {
 "barral_fly": SubResource("Animation_tqaj1")
 }
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_wvve6"]
-atlas = ExtResource("3_ai33v")
-region = Rect2(1808.09, 1089.18, 289.091, 215.455)
-
 [sub_resource type="Animation" id="Animation_m0521"]
 length = 0.001
 tracks/0/type = "value"
@@ -253,6 +258,43 @@ _data = {
 "cooler_fly": SubResource("Animation_35q8v")
 }
 
+[sub_resource type="Animation" id="Animation_o17dx"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Shark:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-533, -561)]
+}
+
+[sub_resource type="Animation" id="Animation_63ahm"]
+resource_name = "shark_fly"
+length = 5.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Shark:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2.3, 5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(-533, -561), Vector2(336, 455), Vector2(832, 239)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_0e5rm"]
+_data = {
+"RESET": SubResource("Animation_o17dx"),
+"shark_fly": SubResource("Animation_63ahm")
+}
+
 [node name="victory" type="Control"]
 layout_mode = 3
 anchors_preset = 15
@@ -270,6 +312,19 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 0.352941)
+
+[node name="Barral" type="Sprite2D" parent="."]
+position = Vector2(1312, 317)
+texture = SubResource("AtlasTexture_b4ck2")
+
+[node name="Cooler" type="Sprite2D" parent="."]
+position = Vector2(225, 698)
+texture = SubResource("AtlasTexture_wvve6")
+
+[node name="Shark" type="Sprite2D" parent="."]
+position = Vector2(-533, -561)
+scale = Vector2(0.179187, 0.194455)
+texture = SubResource("AtlasTexture_y2fvy")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="."]
 layout_mode = 1
@@ -303,10 +358,6 @@ position = Vector2(-63.5625, 38.0625)
 scale = Vector2(0.631241, 0.643446)
 texture = SubResource("AtlasTexture_ssq5l")
 
-[node name="Barral" type="Sprite2D" parent="."]
-position = Vector2(1312, 317)
-texture = SubResource("AtlasTexture_b4ck2")
-
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
 "": SubResource("AnimationLibrary_hlpwu")
@@ -317,11 +368,12 @@ libraries = {
 "": SubResource("AnimationLibrary_r6ocp")
 }
 
-[node name="Cooler" type="Sprite2D" parent="."]
-position = Vector2(225, 698)
-texture = SubResource("AtlasTexture_wvve6")
-
 [node name="AnimationPlayer3" type="AnimationPlayer" parent="."]
 libraries = {
 "": SubResource("AnimationLibrary_2fwpd")
+}
+
+[node name="AnimationPlayer4" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_0e5rm")
 }

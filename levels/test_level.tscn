@@ -14,7 +14,7 @@
 [ext_resource type="Script" path="res://scripts/rigid_chain_refactor.gd" id="12_y5yan"]
 [ext_resource type="Texture2D" uid="uid://dvyg8k6p4rwc7" path="res://assets/Fishing_Bobber.png" id="14_cb6n3"]
 [ext_resource type="Script" path="res://scripts/Buoyant.gd" id="14_ttc3b"]
-[ext_resource type="PackedScene" path="res://nodes/fisher_skeleton_v2.tscn" id="16_cg44r"]
+[ext_resource type="PackedScene" uid="uid://cya56trmcu1is" path="res://nodes/fisher_skeleton_v2.tscn" id="16_cg44r"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_s1i3p"]
 atlas = ExtResource("3_uf7be")

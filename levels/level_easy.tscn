@@ -1,12 +1,13 @@
-[gd_scene load_steps=15 format=3 uid="uid://bw7fvryoatl7a"]
+[gd_scene load_steps=16 format=3 uid="uid://bw7fvryoatl7a"]
 
-[ext_resource type="Script" path="res://levels/level_1.gd" id="1_cyh2a"]
+[ext_resource type="Script" path="res://scripts/level_easy.gd" id="1_044ar"]
 [ext_resource type="PackedScene" uid="uid://b8v3g4exip626" path="res://nodes/pause_menu.tscn" id="2_wj5xi"]
 [ext_resource type="PackedScene" uid="uid://d1bsjvvc22n4b" path="res://nodes/cloudy_skys.tscn" id="3_v4gvp"]
 [ext_resource type="TileSet" uid="uid://cmcpnwdeph0tl" path="res://assets/Mossy Tileset/tileset.tres" id="4_07b6a"]
 [ext_resource type="PackedScene" uid="uid://bnb7bqebb5t0q" path="res://nodes/fish.tscn" id="5_tnegn"]
 [ext_resource type="PackedScene" uid="uid://ca6kdmd2nkoer" path="res://nodes/water.tscn" id="7_mo4ov"]
 [ext_resource type="PackedScene" uid="uid://bqm4k1621pbwk" path="res://nodes/cooler.tscn" id="8_erlf5"]
+[ext_resource type="Script" path="res://scripts/level_easy_fisher.gd" id="9_1im8c"]
 [ext_resource type="Script" path="res://scripts/string.gd" id="9_bdnnt"]
 [ext_resource type="PackedScene" uid="uid://c5h56t000mwfd" path="res://nodes/fisher.tscn" id="9_cnybd"]
 [ext_resource type="Script" path="res://scripts/Buoyant.gd" id="10_g6oo2"]
@@ -17,14 +18,13 @@
 radius = 21.2132
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ji8ca"]
-size = Vector2(874, 202)
+size = Vector2(2104, 438)
 
 [node name="Node2D" type="Node2D"]
-script = ExtResource("1_cyh2a")
+script = ExtResource("1_044ar")
 
 [node name="PauseOverlayAttachPoint" type="CanvasLayer" parent="."]
 layer = 100
-visible = false
 
 [node name="PauseMenu" parent="PauseOverlayAttachPoint" instance=ExtResource("2_wj5xi")]
 
@@ -76,6 +76,7 @@ scale = Vector2(1.3, 1.3)
 [node name="Fisher" parent="." instance=ExtResource("9_cnybd")]
 position = Vector2(1697, -487)
 mass = 10.0
+script = ExtResource("9_1im8c")
 
 [node name="FishingLine" type="Node2D" parent="Fisher"]
 position = Vector2(-440, -352)
@@ -101,10 +102,10 @@ scale = Vector2(0.1, 0.1)
 texture = ExtResource("11_hjq56")
 
 [node name="Area2D" type="Area2D" parent="."]
-position = Vector2(1747, 2964)
+position = Vector2(1702, 2919)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(405, 23)
+position = Vector2(-1139, 977)
 shape = SubResource("RectangleShape2D_ji8ca")
 
 [node name="Boat" parent="." instance=ExtResource("10_qcqjy")]
